@@ -1,6 +1,7 @@
 <?php
 
 
+
 class user
 {
     var $nev, $email;
@@ -19,9 +20,14 @@ function getEmail(){return $this->email;}
 
 }
 
+
 $user1 = new user ("Pista","emai@email.hu");
+
+print "körte";
+
+
 
 print $user1->getName()." email címe:  ".$user1->getEmail();
 
-print ""."alma"."";
+print " "."alma"." ";
 
