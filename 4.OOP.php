@@ -23,3 +23,5 @@ $user1 = new user ("Pista","emai@email.hu");
 
 print $user1->getName()." email címe:  ".$user1->getEmail();
 
+print ""."alma"."";
+
