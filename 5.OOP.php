@@ -2,16 +2,19 @@
 
 
 
+
+
 class user
 {
     var $nev, $email;
 
-function __destruct(){
-print " "."destruct";}
+function __call($name, $arg){
+print $name."<br>";
+print_r ($arg);}
 
     function __construct($name, $mail)
     {
-        print "construct"." ";
+        ;
         $this->nev = $name;
         $this->email = $mail;
     }
@@ -20,12 +23,6 @@ function getEmail(){return $this->email;}
 
 }
 
-
 $user1 = new user ("Pista","emai@email.hu");
 
-print "körte";
-
-print $user1->getName()." email címe:  ".$user1->getEmail();
-
-print " "."alma"." ";
-
+print $user1->sayhelo("egy","kettő");
