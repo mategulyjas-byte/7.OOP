@@ -1,10 +1,5 @@
 <?php
 
-
-
-
-
-
 class user
 {
     var $nev, $email;
