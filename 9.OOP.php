@@ -42,4 +42,4 @@ class kutya extends Allatok
 
 
 class DBconnection{ }
-class Listusers extends DBconnection
+class Listusers extends DBconnection{};
