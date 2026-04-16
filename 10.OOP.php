@@ -68,7 +68,7 @@ function getSzemélyekszáma(){return $this->személyekszáma;}
 
 }
 
-$autó1= new autókkk("BMW","E30",3);
+$autó1= new autókkk("BMW","E30",5);
 
 print "<br>".$autó1->getMárka()."<br>".$autó1->getTípus()."<br>".$autó1->getSzemélyekszáma();
 
@@ -100,7 +100,7 @@ function getSzemélyekszáma(){return $this->személyekszáma;}
 function __destruct(){ print "destruct";}
 }
 
-$autó1= new autókkkk("BMW","E30",3);
+$autó1= new autókkkk("BMW","E30",5);
 
 print "<br>".$autó1->getMárka()."<br>".$autó1->getTípus()."<br>".$autó1->getSzemélyekszáma()."<br>";
 
