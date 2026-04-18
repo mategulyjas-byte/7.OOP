@@ -119,7 +119,7 @@ print "<br>".$autó1->getMárka()."<br>".$autó1->getTípus()."<br>".$autó1->ge
 class autókkkkK{
 
 var $márka, $típus, $személyekszáma;
-
+()
 
 function __construct($márka,$típus,$személyekszáma){
 
