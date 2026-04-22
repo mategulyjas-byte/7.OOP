@@ -7,7 +7,8 @@ include __DIR__."/controllers/PageControllers.php";
 $page= new PageControllers;
 
     switch ($url) 
-    {
+    { 
+        
     case '/':  $page->homepage();
             break;
     case '/ register':  if($_SERVER["REQUEST_METHOD"]=== "POST"){
