@@ -12,10 +12,10 @@
 
 <h2> HOME PAGE</h2>
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero dolores deleniti! Porro, eum? Vitae quae voluptates ratione facilis pariatur vero dolores in, facere ipsam sed autem saepe architecto. Dicta?
-
-
-
+Lorem ipsum dolor sit amet consectetur adipisicing
+ elit. Cumque vero dolores deleniti! Porro, eum? 
+ Vitae quae voluptates ratione facilis pariatur vero 
+ dolores in, facere ipsam sed autem saepe architecto. Dicta?
 
 </body>
 </html>
