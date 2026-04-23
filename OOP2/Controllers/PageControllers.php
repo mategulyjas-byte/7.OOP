@@ -9,4 +9,4 @@ class PageControllers{
  function AboutMe() {include (__DIR__."/../View/AboutMe.php");}
 
  function Product() {include (__DIR__."/../View/Product.php");}
-}
+};
