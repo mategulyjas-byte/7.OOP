@@ -13,7 +13,7 @@
 <p>Lorem ipsum dolor sit amet consectetur,
      adipisicing elit. Unde animi sint temporibus 
      sed voluptatibus, eveniet voluptatum illum iusto!
-      Necessitatibus quisquam consequuntur possimus
+      Necexssitatibus quisquam consequuntur possimus
        aliquid dolores optio accusantium fugit ullam 
        dolorum accusamus.</p>
 </body>
