@@ -20,5 +20,5 @@ switch ($url){
     case '/Product/': $page->Product();
     break;
 
-    default: print "404 hiba";
+    default: print "404 hiba";;
 }
