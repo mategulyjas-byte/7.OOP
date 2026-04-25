@@ -1,3 +1,6 @@
+
+
+
 RewriteEngine On
 RewriteBase /gulyasmate/
 RewriteCond %{REQUEST_FILENAME} !-f
