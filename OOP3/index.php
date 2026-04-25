@@ -21,7 +21,7 @@ break;
 case'/Galeria': $oladalak->Galeria();
 break;
 
-case '/Elerhetoseg': $oladalak->Elerhetoseh();
+case '/Elerhetoseg': $oladalak->Elerhetoseg();
 break;
 default: print " Hiba!  Kérem ellenőrizze a beírt címet";
 }
