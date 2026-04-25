@@ -4,13 +4,16 @@ include __DIR__."/Controller/Controller.php";
 
 $url=$_SERVER["REQUEST_URI"];
 
-;
+$url=str_replace('/gulyasmate/index.php','',$url);
+
+
+
 $oladalak= new Controller;
 
 
 switch ($url){
 
-case '': $oladalak->Fooldal();
+case '/': $oladalak->Fooldal();
 break;
 
 case '/Rolunk': $oladalak->Rolunk();
