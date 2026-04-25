@@ -4,7 +4,7 @@ class Controller{
 
 function Fooldal()  {include (__DIR__."/../View/Fooldal.php");}
 
-function Elerhetoseh(){
+function Elerhetoseg(){
     include (__DIR__."/../View/Elerhetoseg.php");
 }
 function Galeria(){
