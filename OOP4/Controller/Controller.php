@@ -22,7 +22,7 @@ function Fooldal(){
 // foreach ($users as $user){ print "$user->name.<br>";}
 
 
-$this->ViewData=[];
+$this->ViewData=[];;
 
 
 $url= "users.json";
