@@ -2,6 +2,7 @@
 
 include __DIR__."/Controller/Controller.php";
 
+include __DIR__."/Config.php";
 
 $url=$_SERVER["REQUEST_URI"];
 
