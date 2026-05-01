@@ -1,16 +1,7 @@
-<?php if( !defined('IN')){http_response_code(403); exit;}
+<?php defined("BELEP") || http_response_code(406) && exit?>
 
-//php tag előtt ne legyen egy üres sor sem,
-// külömben a http_response_code nem jelink meg
 
-// különféle tiltó kódok, de a légyegük ugyanaz
 
-//if (!defined("IN")) {exit ("Belépés megtagadva");}
-
-//defined('IN') || exit ("Belépés megtagadva");
-
-?>
-<!-- itt a navbar -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
