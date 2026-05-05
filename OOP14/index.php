@@ -3,29 +3,33 @@ spl_autoload_register(function ($file) {
     include(str_replace('\\', DIRECTORY_SEPARATOR, "$file.php"));
 });
 
+use controllers\GuestController;
+use controllers\PageController as PC;
 
 include __DIR__ . "/config.php";
 
-use controller\Controller as C;
 
 $url = $_SERVER["REQUEST_URI"];
 
-$Controller = new C;
+$guest = new GuestController;
+$page = new PC;
 
 switch ($url) {
     case '/':
-        $Controller->homepage();
+        $page->homepage();
         break;
     case '/about':
-        $Controller->about();
+        $page->about();
         break;
     case '/register':
 
-        if($_SERVER["REQUEST_METHOD"]== 'POST'){
+        if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
-
+            //print_r ($_POST);
+            $guest->registerProcess();
+        } else {
+            $guest->registerView();
         }
-        else{}
 
         break;
 

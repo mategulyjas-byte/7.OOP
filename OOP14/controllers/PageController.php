@@ -1,10 +1,10 @@
-<?php namespace controller;
+<?php namespace controllers;
 
     use traits\ViewTrait as VT;
 
 defined("BELEP")|| http_response_code(410) && exit;
 
-class Controller{
+class PageController{
    
     use VT;
 
@@ -16,8 +16,10 @@ function about(){
     $title= "About";
     
 $this->show("about", compact("title"));
-}
-function register (){ 
-    $title="Register";
-$this->show("register", compact("title"));}
-}
+}}
+
+
+// function register (){ 
+//     $title="Register";
+// $this->show("register", compact("title"));}
+// }
