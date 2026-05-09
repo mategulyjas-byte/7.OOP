@@ -1,6 +1,4 @@
-<?php if (!defined("BELEP")) {
-    http_response_code(413) && exit;
-} ?>
+
 
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="<?php print WS_THEME; ?>">
@@ -11,6 +9,14 @@
     <?php include __DIR__ . "/includes/navbar.php"; ?>
 
     <div class="container" style="max-width: 450px;">
+
+
+
+
+
+
+
+
 
         <h3 class="text-center mt-5">Regisztráció</h3>
 

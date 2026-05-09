@@ -12,6 +12,33 @@
 
     <div class="container" style="max-width: 450px;">
 
+
+<?php if (isset($_SESSION["flash"]["errors"])){ ?>
+
+
+
+<div class="alert alert-danger">
+<?php 
+
+if (isset($_SESSION["flash"]["errors"])){
+
+print "<ul>";
+foreach ($_SESSION["flash"] ["errors"] as $error){print "<li> $error</li>";}
+print "</ul>";
+}
+
+
+?>
+
+
+
+</div>
+<?php }?>
+
+
+
+
+
         <h3 class="text-center mt-5">Regisztráció</h3>
 
         <form class="row gy-3" action="/register" method="post">

@@ -8,7 +8,6 @@ use controllers\PageController as PC;
 
 include __DIR__ . "/config.php";
 
-
 $url = $_SERVER["REQUEST_URI"];
 
 $guest = new GuestController;
@@ -21,19 +20,14 @@ switch ($url) {
     case '/about':
         $page->about();
         break;
+
     case '/register':
 
-        if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-
-            //print_r ($_POST);
-            $guest->registerProcess();
-        } else {
-            $guest->registerView();
-        }
-
+        if ($_SERVER["REQUEST_METHOD"] == 'POST') { //print_r ($_POST);
+            $guest->registerProcess();}
+             
+            else {$guest->registerView();}
         break;
-
-
 
     default:
         http_response_code(401);
