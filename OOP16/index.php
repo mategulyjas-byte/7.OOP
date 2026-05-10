@@ -3,11 +3,14 @@ spl_autoload_register(function($file){include (str_replace("\\", DIRECTORY_SEPAR
 
 session_start();
 
-use controllers\PageController;
 
-$url=$_SERVER["REQUEST_URL"];
+use controllers\PageController;
+use controllers\GuestController;
+
+$url=$_SERVER["REQUEST_URI"];
 
 $page= new PageController;
+$guest= new GuestController;
 
 switch ($url){
     case "/": $page->homepage();
@@ -17,6 +20,9 @@ switch ($url){
     break;
 
     case "/register": 
-        if ($_SERVER["REQUEST_METHOD"]== "POST"){  }
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){ $guest->registerProcess();}
+
+        else {$guest->registerView();}
+    break;
 
 }

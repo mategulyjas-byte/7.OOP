@@ -13,7 +13,7 @@
     <div class="container" style="max-width: 450px;">
 
 
-<?php if (isset($_SESSION["flash"]["errors"])){ ?>
+<?php if (isset($_SESSION["flash"]["errors"])){ ?> 
 
 
 

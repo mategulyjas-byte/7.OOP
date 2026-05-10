@@ -1,6 +1,6 @@
 <?php
 
-namespace controllers;
+namespace controllers;;
 
 use traits\ViewTrait;
 use traits\ValidationTrait;
@@ -18,7 +18,7 @@ class GuestController
     function registerProcess()
     {
 
-      $_SESSION["flas"]=[];
+      $_SESSION["flash"]=[];
 
       //$_SESSION["errors"] = $_SESSION["post"]=[];
 

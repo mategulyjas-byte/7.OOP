@@ -6,6 +6,8 @@ use traits\ViewTrait;
 
 class PageController{
 
+use ViewTrait;
+
 function homepage(){$this->show("homepage");}
 
 

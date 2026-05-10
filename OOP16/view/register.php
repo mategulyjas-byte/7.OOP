@@ -1,7 +1,5 @@
-
-
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="<?php print WS_THEME; ?>">
+<html lang="en">
 
 <?php include __DIR__ . "/includes/head.php" ?>
 
@@ -13,8 +11,45 @@
 
 
 
+        <?php if (isset($_SESSION["flash"]["errors"])) { ?>
+
+            <div class="alert alert-danger">
+                <?php
+
+                // if( isset($_SESSION["flash"]["errors"]))
+
+                //     {foreach ($_SESSION["flash"]["errors"] as $error){
+
+                // print "<li>$error</li>";}}
 
 
+
+                if (isset($_SESSION["flash"]["errors"])) {
+
+                    print "<ul>";
+                    foreach ($_SESSION["flash"]["errors"] as $err) {
+                        print "<li> $err </li>";
+                    }
+                    print "</ul>";
+                }
+
+
+                ?>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        <?php;
+        } ?>
 
 
 
@@ -47,7 +82,7 @@
             </div>
         </form>
     </div>
-    <?php include __DIR__ . "/includes/scripts.php" ?>
+    <?php include __DIR__ . "/includes/script.php" ?>
 </body>
 
 </html>
