@@ -33,7 +33,5 @@ if($_POST[$key1] !== $_POST[$key2]){
 
 return $this;
 }
-
-
 }
  

@@ -1,7 +1,5 @@
 <?php
-
 namespace controllers;;
-
 use traits\ViewTrait;
 use traits\ValidationTrait;
 
@@ -14,22 +12,17 @@ class GuestController
         $title = "Register";
         $this->show("register", compact("title"));
     }
-
     function registerProcess()
     {
-
       $_SESSION["flash"]=[];
 
       //$_SESSION["errors"] = $_SESSION["post"]=[];
-
        // $_SESSION["errors"] = [];
        // $_SESSION["post"]=[];
-
         // $this->validLength("name", 2, 30, "A név minimum %d és maximum %d karakter lehet");
         // $this->validLength("password", 4, 20, "A jelszó minimum %d és maximum %d karakter lehet");
         // $this->compare("password", "password_confirmation", "A két jelszó nem azonos" );
         // $this->validEmail("email" ,"Az email cím invalid");
-
         //print_r($_SESSION["errors"]);
 
         $this->validLength("name", 2, 30, "A név minimum %d és maximum %d karakter lehet")
