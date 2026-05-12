@@ -5,7 +5,7 @@
 <body>
 <?php  include __DIR__ ."/includes/navbar.php" ?>    
 
-
+<h2>Homepage</h2>
 
 
 
