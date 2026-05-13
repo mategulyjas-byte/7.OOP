@@ -11,20 +11,31 @@ use ValidationTrait;
 use ViewsTrait;
 
 
-function registerview(){$this->show("register");}
+function registerView(){$this->show("register");}
 
 
 
-function registerProcess(){
+function registerProcess($connection){
 
-$_SESSION["flash"]["errors"]=[];
+$_SESSION["flash"]=[];
 
-    $this->validLength("name", 2, 3, "A %s nek %d és %d karaketer között kell lennie")
+    $this->validLength("name", 1, 40, "A névnek %d és %d karaketer között kell lennie")
     ->validEmail("email", "Az  email invalid")
-    ->validLength("password", 3, 4, "A jelszónak %d és %d karakter között kell lennnie")
-    ->compare("password", "password_confirmation", "A jelszavak nem egyeznek");
+    ->validLength("password", 1, 40, "A jelszónak %d és %d karakter között kell lennnie")
+    ->compare("password", "password_confirm", "A jelszavak nem egyeznek")
+    ;
+
+if (!isset($_SESSION["flash"]["errors"]) || count ($_SESSION["flash"]["errors"]) === 0 ){
+ 
+mysqli_query($connection, "insert into user (name, email, password)  values
+ ('{$_POST["name"]}', '".$_POST["email"]."', '".$_POST["password"]."')" );
+
+$_SESSION["flash"]["success"]= "Sikeres regisztráció";
+}
+
     
-    header("location:/register");
+
+    header("location:register");;
     }
 
 

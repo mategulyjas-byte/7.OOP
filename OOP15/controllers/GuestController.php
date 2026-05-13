@@ -40,6 +40,8 @@ class GuestController
 function __destruct()
 { if($_SERVER["REQUEST_METHOD"] !=="POST")
 
+
+
 unset ($_SESSION["flash"]);
     //unset ($_SESSION["errors"], $_SESSION["post"] );
 }
