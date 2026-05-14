@@ -35,8 +35,12 @@ if (!isset($_SESSION["flash"]["errors"]) || count ($_SESSION["flash"]["errors"])
 //$_SESSION["flash"]["success"]= "Sikeres regisztráció";
 
 
-$model= new user ($connection);
+$model= new User ($connection);
+
  $model->insert(['name','email','password']);
+
+
+
 
 $_SESSION["flash"]["success"]= "Sikeres regisztráció";
 

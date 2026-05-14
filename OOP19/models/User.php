@@ -6,7 +6,7 @@ class User {
 
 //implode("---", [1,2,3;]); kiprintelev "1---2---3"
 
-private $table= "users", $connection;
+private $table= "user", $connection;
 
 
 function __construct($connection)
