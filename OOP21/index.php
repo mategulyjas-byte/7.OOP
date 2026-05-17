@@ -3,6 +3,8 @@ spl_autoload_register (function($file){include (str_replace("\\", DIRECTORY_SEPA
 
 session_start();
 
+$connection= mysqli_connect("localhost", "root", "","gulyas_mate");
+
 use controllers\PageController;
 use controllers\GuestController;
 
@@ -19,9 +21,9 @@ switch ($url){
     break;
 
     case '/register':
-        if ( $_SERVER["REQUEST_METHOD"]== "POST"){ $guest->registerProcess();} else{ $guest->registerView();}
+        if ( $_SERVER["REQUEST_METHOD"]== "POST"){ $guest->registerProcess($connection);} else{ $guest->registerView();}
 
-
+break;
 
 
 

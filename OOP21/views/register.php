@@ -10,7 +10,54 @@
 
 
 
-<div class=" container">
+<div class="container mx-auto" style="max-width: 500px;">
+
+
+<?php
+
+
+if(isset($_SESSION["flash"]["errors"]) && !empty ($_SESSION["flash"]["errors"])         ){?>
+
+<div class="alert alert-danger">
+
+<ul>
+<?php
+
+if(isset($_SESSION["flash"]["errors"])){ foreach ($_SESSION["flash"]["errors"] as $error){ ?>
+
+<?php
+print "<li> $error</li>";
+?>
+
+
+<?php
+};} ?>
+</ul>
+</div>
+<?php } ?>
+
+<?php
+
+if(isset($_SESSION["flash"]["success"])){ 
+
+print "<div class='alert alert-success'>";
+   print $_SESSION["flash"]["success"];
+
+print "</div>";
+
+
+
+
+
+
+} 
+
+
+
+?>
+
+
+
 
 
 
@@ -48,7 +95,7 @@
             <input type="password"  name="password_confirmation"      id="password_confirmation" class="form-control">
          </div>
 
-         <div class="col-md -12 text-center">
+         <div class="col-md-12 text-center">
             <button type="submit"  class="btn btn-warning mt-3">Regisztráció</button>
          </div>
       </form>

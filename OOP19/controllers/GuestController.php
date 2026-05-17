@@ -24,7 +24,7 @@ $_SESSION["flash"]=[];
     $this->validLength("name", 1, 40, "A névnek %d és %d karaketer között kell lennie")
     ->validEmail("email", "Az  email invalid")
     ->validLength("password", 1, 40, "A jelszónak %d és %d karakter között kell lennnie")
-    ->compare("password", "password_confirm", "A jelszavak nem egyeznek")
+    ->compare("password", "password_confirmation", "A jelszavak nem egyeznek")
     ;
 
 if (!isset($_SESSION["flash"]["errors"]) || count ($_SESSION["flash"]["errors"]) === 0 ){
@@ -46,7 +46,7 @@ $_SESSION["flash"]["success"]= "Sikeres regisztráció";
 }
 
 
-    header("location:register");;
+    header("location:/register");;
     }
 
 
