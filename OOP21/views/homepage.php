@@ -1,5 +1,7 @@
+<?php if(!defined("IN")){ http_response_code(404); exit;}?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme= "<?php print WS ?>">
 
 
 

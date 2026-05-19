@@ -8,6 +8,9 @@ $connection= mysqli_connect("localhost", "root", "","gulyas_mate");
 use controllers\PageController;
 use controllers\GuestController;
 
+
+include __DIR__."/views/config.php";
+
 $url=$_SERVER["REQUEST_URI"];
 
 $page = new PageController;
