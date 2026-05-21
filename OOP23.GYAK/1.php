@@ -109,23 +109,83 @@
 
 
 
-class Emberekjellemzoi{
+// class Emberekjellemzoi{
 
-public $szuletesidatum;
-public $nev;
-public $nem;
+// public $szuletesidatum;
+// public $nev;
+// public $nem;
 
 
-function __call($name, $arguments)
+// function __call($name, $arguments)
 
-{ print "Nem létezik a   $name " ;
-print ($arguments[0]." és ". $arguments[1]);
-print "nevű argumentuma sem";}
+// { print "Nem létezik a   $name " ;
+// print ($arguments[0]." és ". $arguments[1]);
+// print "nevű argumentuma sem";}
 
-}
+// }
 
-$ember1 = new Emberekjellemzoi;
+// $ember1 = new Emberekjellemzoi;
 
-//print $ember1->autók();
+// //print $ember1->autók();
 
-print $ember1->kedvencszín("zöld", "kék");
+// print $ember1->kedvencszín("zöld", "kék");
+
+
+
+
+
+
+
+
+// class autok{
+
+// public $marka, $szín;
+
+// function __get($name){ print " Az $name nevú változó/érték nem létezik \n";}
+
+// function __construct($szín,$marka)
+// {$this->szín=$szín;
+// $this->marka=$marka;}
+
+
+// function __call($name, $arguments)
+// {}
+
+// function __set($name, $value)
+// {  }
+
+// }
+
+// $auto1= new autok ("kék","Audi");
+
+// $auto1->évjarat;
+
+// $auto1->évjarat=1999;
+
+
+// print $auto1->marka;
+
+// print $auto1->fogyazstásszámlalo();
+
+ class autók{
+
+ public $márka, $évj;
+
+ static function márkamegadása($márka){ return "Ez a kocsi $márka \n";}
+
+
+ static function évjáratmegadás($évj){ return "Ez $évj évjáratú kocsi \n";}
+
+
+ static function __callStatic($name, $arguments)
+ { return "nem létezik $name nevú function és nincs neki $arguments[0] nevű értéke";
+
+ }
+ }
+
+
+ print autók::márkamegadása("BMW");
+
+ print autók::évjáratmegadás("1999");
+
+ print autók::végsebességmegadás("200km/h");
