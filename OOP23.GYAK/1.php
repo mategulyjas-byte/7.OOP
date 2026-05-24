@@ -167,25 +167,78 @@
 
 // print $auto1->fogyazstásszámlalo();
 
- class autók{
+//  class autók{
 
- public $márka, $évj;
+//  public $márka, $évj;
 
- static function márkamegadása($márka){ return "Ez a kocsi $márka \n";}
-
-
- static function évjáratmegadás($évj){ return "Ez $évj évjáratú kocsi \n";}
+//  static function márkamegadása($márka){ return "Ez a kocsi $márka \n";}
 
 
- static function __callStatic($name, $arguments)
- { return "nem létezik $name nevú function és nincs neki $arguments[0] nevű értéke";
-
- }
- }
+//  static function évjáratmegadás($évj){ return "Ez $évj évjáratú kocsi \n";}
 
 
- print autók::márkamegadása("BMW");
+//  static function __callStatic($name, $arguments)
+//  { return "nem létezik $name nevú function és nincs neki $arguments[0] nevű értéke";
 
- print autók::évjáratmegadás("1999");
+//  }
+//  }
 
- print autók::végsebességmegadás("200km/h");
+
+//  print autók::márkamegadása("BMW");
+
+//  print autók::évjáratmegadás("1999");
+
+//  print autók::végsebességmegadás("200km/h");
+
+
+
+
+
+
+class cars{
+public $mark, $type, $year;
+
+function CarInfo(){return "Az autó márkája $this->mark , típusa $this->type , évjárata $this->year ";}
+
+}
+
+$car1 = new cars;
+
+$car1->mark="Seat";
+$car1->type="Arosa";
+$car1->year=1999;
+
+$car2 =new cars;
+
+$car2->mark= "Opel";
+$car2->type= "F Astra";
+$car2->year=2002;
+
+//print $car1->CarInfo();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="conatiner">
+<?php 
+
+print "<ul>";
+print ("<li>"  .$car1->CarInfo(). "</li>");
+print ("<li>" .$car2->CarInfo()."</li>");
+print "</ul>";
+
+
+
+
+?>
+</div>
+
+</body>
+</html>
