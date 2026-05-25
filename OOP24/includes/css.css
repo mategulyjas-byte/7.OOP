@@ -1,0 +1,270 @@
+:root {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Quando", serif;
+    ;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: linear-gradient(#eea6f6, rgba(255, 255, 255, 0.6)),
+        url(https://img.freepik.com/premium-vector/different-amount-mental-energy-mental-health-concept_594757-129.jpg?w=1480);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 0rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.include {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+}
+
+header div {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEPuAeZcHNhTWrSKJB_RWczoCtoQLFb80Vxw&s );
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    border-radius: 90%;
+    padding: 1.5rem;
+    color: gold;
+    font-size: larger;
+}
+
+header h1 {
+    color: blue;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+header h3 {
+    text-decoration: underline;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    color: darkblue;
+
+}
+
+
+
+
+main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+aside {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+aside div {
+    width: 33%;
+    text-align: justify;
+
+}
+
+.diviframe1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside div h4 {
+    text-align: center;
+}
+
+.iframe1 {
+    display: flex;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 2rem;
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+
+
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 70%;
+    margin: auto;
+}
+
+section p {
+    font-size: large;
+    text-align: justify;
+    justify-content: center;
+}
+
+
+.div_rol {
+    flex-direction: column;
+    margin: auto;
+    text-align: justify;
+    width: 60%;
+}
+
+.div1 h4 {
+    text-align: center;
+}
+
+.elerhetoseg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.elerhetoseg p {
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.elerhetoseg img {
+    max-height: 16rem;
+    text-align: center;
+    border-radius: 9%;
+}
+
+
+.div_gyik {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.div_gyik h5 {
+    align-self: flex-start;
+}
+
+.div_gyik p {
+    text-align: justify;
+}
+
+
+.alert-danger {
+    background-color: hsl(13, 100%, 50%) !important;
+}
+
+
+.koszontes {
+    background-color: goldenrod;
+    text-align: center;
+    max-width: fit-content;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 1%;
+    border-radius: 50%;
+    font-size: large;
+}
+
+
+.table{ border: 0.2rem solid black !important;
+    opacity: 0.7 !important ; margin-top: 0.2rem !important;
+     
+}
+
+td, th{text-align: center !important;}
+
+th:nth-child(1) { width: 10% !important; } 
+th:nth-child(2) { width: 60% !important; } 
+th:nth-child(3) { width: 30% !important; } 
+
+.alert1{width:fit-content !important;}
+
+
+    
+@media screen and (max-width: 991.5px) {
+
+    aside,
+    section {
+        width: 100% !important;
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    aside div {
+        width: 100%;
+    }
+
+    section p {
+        width: 100%;
+    }
+
+    body {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .div_rol {
+        width: 100% !important;
+    }
+
+    .elerhetoseg {
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .elerhetoseg img {
+        max-width: 40%;
+        margin: auto;
+    }
+
+    .div_gyik {
+        width: 100% !important;
+    }
+
+    form {
+        max-width: 100% !important;
+    }
+
+
+
+}
+
+/*   a háttérkép az egész nézet mögött center pozícióban helyezkedik el (nagy méretben mivel az aside kitakarta az egszet ezért csak a main rész mögött volt jól látható. További fejlesztésként még teljes nézetben a main egy részénél is valamilyen módon érdemes lenne s*/

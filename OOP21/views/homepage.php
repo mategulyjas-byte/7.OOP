@@ -11,10 +11,6 @@
 <?php include __DIR__."/includes/navbar.php"; ?>
 
 
-
-
-
-
 <?php include __DIR__."/includes/script.php"; ?>
 </body>
 </html>
