@@ -2,6 +2,7 @@
 
 namespace controllers;
 
+use modells\User2;
 use traits\ViewTrait;
 use traits\ValidationTrait;
 
@@ -25,6 +26,13 @@ function RegisterProcess($connection){
 
 
     if(isset($_SESSION["flas"]["errors"]) && empty($_SESSION["flas"]["errors"])) { $_SESSION["flas"]["success"]="Sikeres regisztráció"; }
+
+$model= new User2 ($connection);
+
+$model->insert(["name", "email", "password"]);
+
+
+
 
 header("location:/regisztracio"); exit;
 
