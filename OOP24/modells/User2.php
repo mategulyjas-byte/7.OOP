@@ -1,5 +1,5 @@
 <?php
-namespace modells;
+/*namespace modells;
 
 use mysqli;
 
