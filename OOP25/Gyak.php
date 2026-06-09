@@ -143,7 +143,7 @@ $query = new Select($connection);
 
 $query->select(["id","name","email"]);
 $query->where("id", ">","1");
-$query->rendezes("id", "desc");
+$query->rendezes("id", "asc");
 
 print $query->query3;
 print "\n";
