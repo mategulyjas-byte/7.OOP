@@ -18,4 +18,4 @@ if(strlen($_POST[$key]) <$min || strlen($_POST[$key]) >$max  ) { $_SESSION["flas
 
 $hossz =new Validation;
 $hossz->ValidLength("name", "10", "20" , "a %d és a %d hhaj");
-print_r( $_SESSION["flash"]["errors"]);
+print_r( $_SESSION["flash"]["errors"]);;
