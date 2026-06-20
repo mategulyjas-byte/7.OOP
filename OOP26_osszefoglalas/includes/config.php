@@ -1,6 +1,6 @@
 <?php 
 define("THEME","dark");
-define("ENTRY", "entry");
+define("ENTRY", true);
 
 
 
