@@ -25,10 +25,11 @@ include __DIR__ . "/../includes/head.php" ?>
                     print "</ul>";
                     print "</div>";
                     }
-                else{ print "<div class='alert alert-success text-center'>";
+
+                else{if(isset($_SESSION["flash"]["success"])){ print "<div class='alert alert-success text-center'>";
                 print $_SESSION["flash"]["success"];
                 print "</div>";
-                }
+                }}
 
                 ?>
             </div>

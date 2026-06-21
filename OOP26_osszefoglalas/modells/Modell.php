@@ -1,0 +1,63 @@
+<?php
+
+namespace modells;
+
+use mysqli;
+
+class Modell
+{
+    public $connection;
+    public $table;
+    public $beirtekek = "";
+
+
+    function __construct($connection)
+    {
+        $this->connection = $connection;
+    }
+
+    function insert($oszlopnevektomb)
+    {
+        $oszlopnevek = implode(",", $oszlopnevektomb);
+
+        $beirtertekek = "";
+        foreach ($oszlopnevektomb as $oszlopnev) {
+            $beirtertekek .= ("'" . $_POST[$oszlopnev] . "',");
+        }
+
+        $beirtertekek = rtrim($beirtertekek, ",");
+
+        $sqlinsert = mysqli_query($this->connection, "insert into $this->table ($oszlopnevek) values ($beirtertekek)");
+    }
+
+    // seclect nema,email, password from user where name='%a%', and email='%@ss.com' orderby 'name'
+    
+    function select($oszlopnevektömb)
+    {
+        $oszlopnevek = implode(",", $oszlopnevektömb);
+
+        $this->beirtekek = " select $oszlopnevek from $this->table "; return $this;
+    }
+
+    function where($oszlopnev, $relaciojel, $ertek)
+    {
+
+        if ((stripos("$this->beirtekek", "where") === false)) {
+            $whereorand = "where";
+        } else {
+            $whereorand = "and";
+        }
+        $this->beirtekek.= "$whereorand $oszlopnev $relaciojel '$ertek'"; return $this;
+    }
+
+    function orderby($oszlopnev, $ascdesc){
+
+    $this->beirtekek.=" order by $oszlopnev $ascdesc"; return $this;
+    }
+
+    function selectösszegzes(){
+$sqlselect=mysqli_query($this->connection, $this->beirtekek);
+$data=[];
+while($egysor=mysqli_fetch_assoc($sqlselect)){ $data[]=$egysor;} return $data;;
+    }
+}

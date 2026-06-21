@@ -11,7 +11,7 @@ function homepage(){$this->show("homepage");  }
 
 function about(){$this->show("about");  }
 
-function register(){$this->show("register");  }
+
 
 }
 
