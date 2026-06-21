@@ -36,7 +36,10 @@ class GuestController
 
     function __destruct()
     {if($_SERVER["REQUEST_METHOD"] == "GET"){unset ($_SESSION["flash"]);}
-        
+       
+    
+
+    
     }
     
 }

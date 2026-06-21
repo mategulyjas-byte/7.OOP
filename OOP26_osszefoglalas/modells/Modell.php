@@ -9,6 +9,7 @@ class Modell
     public $connection;
     public $table;
     public $beirtekek = "";
+    public $beirtertekek2="";
 
 
     function __construct($connection)
@@ -60,4 +61,22 @@ $sqlselect=mysqli_query($this->connection, $this->beirtekek);
 $data=[];
 while($egysor=mysqli_fetch_assoc($sqlselect)){ $data[]=$egysor;} return $data;;
     }
+
+
+    // delete name, email, password from user where name = Máté and email=akdaidx@swqjos
+
+function delete(){
+
+$this->beirtertekek2=" delete from $this->table "; return $this;
+}
+function wheredelete($oszlopnev, $relaciojel, $ertek){
+
+if(stripos($this->beirtertekek2, "where") === false){ $whereorand = "where";} else{ $whereorand= "and";}
+$this->beirtertekek2.= " $whereorand $oszlopnev $relaciojel '$ertek'"; return $this;
+}
+
+function deleteosszegzes(){
+    $sqldelete=mysqli_query($this->connection, $this->beirtertekek2 );
+}
+
 }
