@@ -27,10 +27,12 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
          <form action="/table" method="POST" class="mt-4">
-            <label for="csere">Felhasználó nevének cseréleés</label>
-            <input type="text" name="uj" id="csere">
+            <label for="új">Új felhasználó név:</label>
+            <input type="text" name="uj" id="új">
+
+            <label for="új">Régi felhasználó név:</label>
             <input type="text" name="regi" id="csere">
-            <button type="submit">Felhasználó adatainak módosítása</button>
+            <button type="submit">Felhasználó nevének módosítása módosítása</button>
         </form>
 
     </div>
