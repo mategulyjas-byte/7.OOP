@@ -24,6 +24,15 @@ include __DIR__ . "/../includes/head.php" ?>
             <button type="submit">Felhasználó  adatainak törlése</button>
         </form>
 
+
+
+         <form action="/table" method="POST" class="mt-4">
+            <label for="csere">Felhasználó nevének cseréleés</label>
+            <input type="text" name="uj" id="csere">
+            <input type="text" name="regi" id="csere">
+            <button type="submit">Felhasználó adatainak módosítása</button>
+        </form>
+
     </div>
     <table class="table table-bordered mx-auto mt-4 text-center" style="max-width: 600px;">
 
