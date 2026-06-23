@@ -15,4 +15,4 @@ function about(){$this->show("about");  }
 
 }
 
-$pagecontroller = new PageController;
+//$pagecontroller = new PageController;

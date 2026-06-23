@@ -71,7 +71,13 @@ class Modell
         return $data;;
     }
 
-
+  function selectösszegzesfirst()
+    {
+        $sqlselect = mysqli_query($this->connection, $this->beirtekek);
+        
+       $data= mysqli_fetch_assoc($sqlselect) ?: null; return $data;
+        
+    }
     // delete name, email, password from user where name = Máté and email=akdaidx@swqjos
 
     function delete()
