@@ -20,21 +20,21 @@ function account(){
 
 function emailkeres($connection){
 
-$user= new user($connection);
+$user= new User($connection);
 
-$emailkeres=$user->select(["id","email", "password"])->where ("email", "=", "{$_POST['email']}")->selectösszegzesfirst()
+$userdata=$user->select(["id","name","email", "password"])->where ("email", "=", "{$_POST['email']}")->selectösszegzesfirst()
 ;
 
+ if ($userdata === null){ $_SESSION["flash"]["errors"][]="Hibás adatok";}
+
+else{$this->ComparPassword("password", $userdata['password']);}
+
+if(!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0){  $_SESSION["user"]=$userdata;
 
 
 
 
- if ($emailkeres === null){ $_SESSION["flash"]["errors"][]="Hibás adatok";}
-
-else{$this->ComparPassword("password", $emailkeres['password']);}
-
-if(!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0){  $_SESSION["userid"]=$emailkeres["id"];
-    header("location:https://www.youtube.com/watch?v=4HkUkXYCFbo"); exit;
+    header("location:/profile"); exit;
 }
 
 else{header("location:/account"); exit;}

@@ -8,6 +8,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+      <<?php if(!isset($_SESSION["user"]["name"])){  ?>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Kezdőlap</a>
         </li>
@@ -23,12 +26,28 @@
           <a class="nav-link" href="/account">Belépés</a>
         </li>
 
+<?php ;} else{?>
+
+
+           <li class="nav-item">
+          <a class="nav-link" href="/profile">Profilom</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Kilépés</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/datamodification">Adatmódosítás</a>
+        </li>
+
 
         <li class="nav-item">
           <a class="nav-link" href="/table">Táblázat</a>
         </li>
 
-
+<?php ;} ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Refernciák

@@ -14,12 +14,14 @@ use controllers\PageController;
 use controllers\GuestController;
 use controllers\TableController;
 use controllers\UserController;
+use controllers\LogoutController;
 
 
 $pagecontroller = new PageController;
 $guestcontroller = new GuestController;
 $tablecontroller = new TableController;
-$usercontroller= new UserController;
+$usercontroller = new UserController;
+$logoutcontroller = new LogoutController;
 
 $url = $_SERVER["REQUEST_URI"];
 
@@ -34,7 +36,25 @@ switch ($url) {
 
 
     case '/account':
-        if($_SERVER["REQUEST_METHOD"]=== "GET"){ $usercontroller->account();} else{ $usercontroller->emailkeres($connection);}
+        if ($_SERVER["REQUEST_METHOD"] === "GET") {
+            $usercontroller->account();
+        } else {
+            $usercontroller->emailkeres($connection);
+        }
+        break;
+
+
+    case '/profile':
+        $pagecontroller->profile();
+        break;
+
+
+    case '/logout':
+        $logoutcontroller->logout();
+        break;
+
+    case '/datamodification':
+        $pagecontroller->datamodification();
         break;
 
     case '/register':

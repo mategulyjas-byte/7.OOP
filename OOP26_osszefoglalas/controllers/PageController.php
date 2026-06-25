@@ -11,6 +11,9 @@ function homepage(){$this->show("homepage");  }
 
 function about(){$this->show("about");  }
 
+function profile(){$this->show("profile");  }
+
+function datamodification(){$this->show("datamodification");  }
 
 
 }
