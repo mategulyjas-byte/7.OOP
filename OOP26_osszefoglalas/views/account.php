@@ -26,7 +26,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
         
             <div class="container mx-auto row col-2  mt-4">
-                <button type="submit" class="btn btn-primary  ">Regisztráció</button>
+                <button type="submit" class="btn btn-primary  ">Belépés</button>
             </div>
         </form>
     </div>

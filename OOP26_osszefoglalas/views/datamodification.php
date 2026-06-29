@@ -28,7 +28,9 @@ include __DIR__ . "/../includes/head.php" ?>
 
             <div class="container mx-auto row col-6  mt-4">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Add meg az email-címed">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Add meg az email-címed"
+                value="<?php print $_SESSION["user"]["email"] ?>"
+                >
             </div>
 
             <div class="container mx-auto row col-6  mt-4">

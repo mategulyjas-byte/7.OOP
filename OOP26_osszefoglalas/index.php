@@ -10,18 +10,20 @@ spl_autoload_register(function ($file2) {
 
 $connection = mysqli_connect("localhost", "root", "", "gulyas_mate");
 
+use controllers\DataModificationController;
 use controllers\PageController;
 use controllers\GuestController;
 use controllers\TableController;
 use controllers\UserController;
 use controllers\LogoutController;
-
+use Odbc\Connection;
 
 $pagecontroller = new PageController;
 $guestcontroller = new GuestController;
 $tablecontroller = new TableController;
 $usercontroller = new UserController;
 $logoutcontroller = new LogoutController;
+$datamodificationcontroller= new DataModificationController;
 
 $url = $_SERVER["REQUEST_URI"];
 
@@ -54,7 +56,8 @@ switch ($url) {
         break;
 
     case '/datamodification':
-        $pagecontroller->datamodification();
+        if($_SERVER["REQUEST_METHOD"]=== "GET"){$datamodificationcontroller->datamodification();}
+        else{$datamodificationcontroller->datamodificationprocess($connection);}
         break;
 
     case '/register':

@@ -108,14 +108,20 @@ class Modell
     function update()
     {
 
-        $this->beirtertekek3 = "update $this->table set";
+        $this->beirtertekek3 = " update $this->table  ";
         return $this;
     }
 
     function ertekek($ujnev)
-    {$this->beirtertekek3.=" name = '$ujnev' "; return $this;
+    {$this->beirtertekek3.=" set name = '$ujnev' "; return $this;
 
       
+    }
+
+    function ertekek2($mezonev,$ujnev){
+
+    if(stripos($this->beirtertekek3, "set" ) === false){$setnothing="set";} else{$setnothing=",";}
+    $this->beirtertekek3.= " $setnothing $mezonev= '$ujnev' "; return $this;
     }
 
     function whereupdate($oszlopnev, $relaciojel, $ertek ) {
