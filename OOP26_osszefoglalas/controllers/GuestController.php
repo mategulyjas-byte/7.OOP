@@ -19,9 +19,9 @@ class GuestController
 
     function registerprocess($connection)
     {
-        $this->ValidLength("name", "1", "60", "A név minimum %d maximum %d karakter hosszú lehet")
+        $this->ValidLength("name", "2", "60", "A név minimum %d maximum %d karakter hosszú lehet")
             ->ValidEmail("email", "Invalid email cím")
-            ->ValidLength("password", "1", "60", "A jelszó minimum %d, maximum %d karakter hosszú lehet")
+            ->ValidLength("password", "2", "60", "A jelszó minimum %d, maximum %d karakter hosszú lehet")
             ->Compare("password", "passwordconf", "A jelszavak nem egyeznek meg");
 
         if (empty($_SESSION["flash"]["errors"])) { 
