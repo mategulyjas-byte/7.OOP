@@ -10,7 +10,7 @@ include __DIR__ . "/../includes/head.php" ?>
     <?php include __DIR__ . "/../includes/menu.php" ?>
 
     <div class="container mx-auto text-center gap-3 mt-2" style="max-width: 900px;">
-        <form action="/register" method="post">
+        <form action="/register" method="post" novalidate>
 
             <div>Regiszrációs űrlap</div>
 
@@ -40,14 +40,17 @@ include __DIR__ . "/../includes/head.php" ?>
             <div class="container mx-auto row col-6 mt-4">
                 <label for="name">Név</label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="Add meg a neved"
+                value="<?php print $_SESSION["flash"]["inputs"]["name"] ?? "" ?>"
                 >
                 
-                >
+                
             </div>
 
             <div class="container mx-auto row col-6  mt-4">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="Add meg az email-címed">
+                <input type="email" name="email" id="email" class="form-control" placeholder="Add meg az email-címed"
+                value="<?php print $_SESSION["flash"]["inputs"]["email"] ?? "" ?>"
+                >
             </div>
 
             <div class="container mx-auto row col-6  mt-4">

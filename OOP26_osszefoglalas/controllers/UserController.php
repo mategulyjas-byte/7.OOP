@@ -27,7 +27,11 @@ $userdata=$user->select(["id","name","email", "password"])->where ("email", "=",
 
  if ($userdata === null){ $_SESSION["flash"]["errors"][]="Hibás adatok";}
 
-else{$this->ComparPassword("password", $userdata['password']);}
+else{password_verify($_POST["password"],$userdata["password"] ); 
+    
+
+//$this->ComparPassword("password", $userdata['password']);
+}
 
 if(!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0){  $_SESSION["user"]=$userdata;
 
