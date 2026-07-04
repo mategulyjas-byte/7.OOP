@@ -16,6 +16,7 @@ use controllers\GuestController;
 use controllers\TableController;
 use controllers\UserController;
 use controllers\LogoutController;
+use controllers\TableCityController;
 use Odbc\Connection;
 
 $pagecontroller = new PageController;
@@ -24,6 +25,7 @@ $tablecontroller = new TableController;
 $usercontroller = new UserController;
 $logoutcontroller = new LogoutController;
 $datamodificationcontroller= new DataModificationController;
+$tablecitycontroller= new TableCityController;
 
 $url = $_SERVER["REQUEST_URI"];
 
@@ -71,6 +73,12 @@ switch ($url) {
 
     case '/table':
         $tablecontroller->table($connection);
+        break;
+
+
+          case '/tablecity':
+            if($_SERVER["REQUEST_METHOD"]=== "POST"){
+        $tablecitycontroller->tablecityprocess($connection);} else{$tablecitycontroller->tablecity($connection);}
         break;
 
     default:
