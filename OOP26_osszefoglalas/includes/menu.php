@@ -43,9 +43,15 @@
         </li>
 
 
+
+        <?php  if(( $_SESSION["user"]["email"] === "admin@admin.hu")) {?>
         <li class="nav-item">
           <a class="nav-link" href="/table">Táblázat</a>
         </li>
+<?php ;} ?>
+
+
+
 
         <li class="nav-item">
           <a class="nav-link" href="/tablecity">Települések</a>
