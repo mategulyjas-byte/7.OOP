@@ -199,7 +199,6 @@ include __DIR__ . "/../includes/head.php" ?>
                             <td>
                             
                                 <?php 
-                                    print $települes["nepesseg"];
 
                              if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
 
@@ -217,7 +216,7 @@ include __DIR__ . "/../includes/head.php" ?>
                                     <button name="nepessegmod">Módosítás</button>
                                 </form>
 
-                                <?php ;} ?>
+                                <?php ;} else  print $települes["nepesseg"];?>
 
                             </td>
 
