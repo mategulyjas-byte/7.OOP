@@ -205,6 +205,7 @@ include __DIR__ . "/../includes/head.php" ?>
                                 $takaritottnepesseg = trim($települes["nepesseg"]);
 
                                 if (empty($takaritottnepesseg)) {
+                                    
                                     print "Nincs megadva";
                                 } else {
                                     print $települes["nepesseg"];
