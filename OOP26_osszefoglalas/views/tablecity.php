@@ -108,7 +108,7 @@ include __DIR__ . "/../includes/head.php" ?>
                                 <?php print $települes["tid"] ?>
 
                             </td>
-
+;
                             <td>
                                 <?php 
                                 if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
