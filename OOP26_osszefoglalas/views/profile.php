@@ -10,15 +10,13 @@ include __DIR__."/../includes/head.php"?>
 
 <?php include __DIR__."/../includes/menu.php" ?> 
 
+<?php print $_SESSION["user"]["name"] ."<br>". $_SESSION["user"]["email"]  ?>
 
 
 
 
 
 
-
-
-<p>Homepage</p>
 
 <?php include __DIR__."/../includes/scripts.php" ?>
 </body>

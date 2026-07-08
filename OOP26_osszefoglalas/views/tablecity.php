@@ -110,17 +110,27 @@ include __DIR__ . "/../includes/head.php" ?>
                             </td>
 
                             <td>
-                                <?php print $települes["telepules"] ?>
+                                <?php 
+                                if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
+
+                                
+                                print $települes["telepules"] ?>
 
                                 <form action="/tablecity" method="post">
                                     <input type="hidden" name="id" value="<?php print $települes["tid"] ?>">
                                     <input type="text" name="ujtelepules">
                                     <button name="telepulesmod">Módosítás</button>
                                 </form>
+                                <?php ;} else{print $települes["telepules"]; } ?>
+
+
                             </td>
 
                             <td>
                                 <?php
+
+                                 if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
+
                                 $takarítotttelepulesresz = trim($települes["telepulesresz"]);
 
                                 if (empty($takarítotttelepulesresz)) {
@@ -135,12 +145,15 @@ include __DIR__ . "/../includes/head.php" ?>
                                     <button name="telepulesreszmod">Módosítás</button>
                                 </form>
 
-
+                                <?php ;} else {print $települes["telepulesresz"];} ?>
 
 
                             </td>
                             <td>
-                                <?php $takaritotttkod = trim($települes["tkod"]);
+                                <?php 
+                             if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
+
+                                $takaritotttkod = trim($települes["tkod"]);
 
                                 if (empty($takaritotttkod)) {
                                     print "Nincs megadva";
@@ -155,14 +168,16 @@ include __DIR__ . "/../includes/head.php" ?>
                                 </form>
 
 
-
+                                <?php ;} else {print $települes["tkod"];  }?>
 
 
                             </td>
+
                             <td>
+                            <?php if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
 
 
-                                <?php $takaritottmkod = trim($települes["mkod"]);
+                                 $takaritottmkod = trim($települes["mkod"]);
 
                                 if (empty($takaritottmkod)) {
                                     print "Nincs megadva";
@@ -175,11 +190,18 @@ include __DIR__ . "/../includes/head.php" ?>
                                     <input type="text" name="ujmkod">
                                     <button name="mkodmod">Módosítás</button>
                                 </form>
-
+                                <?php ;} else { print $települes["mkod"];
+                                    
+                                } ?>
                             </td>
                             <td>
 
-                                <?php $takaritottirszam = trim($települes["irszam"]);
+
+                            <?php if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
+
+
+
+                                 $takaritottirszam = trim($települes["irszam"]);
 
                                 if (empty($takaritottirszam)) {
                                     print "Nincs megadva";
@@ -192,6 +214,8 @@ include __DIR__ . "/../includes/head.php" ?>
                                     <input type="text" name="ujirszam">
                                     <button name="irszammod">Módosítás</button>
                                 </form>
+
+                                <?php ;} else {print $települes["irszam"];} ?>
 
                             </td>
 
