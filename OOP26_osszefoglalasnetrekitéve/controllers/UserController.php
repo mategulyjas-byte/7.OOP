@@ -1,0 +1,50 @@
+<?php
+
+namespace controllers;
+
+use modells\User;
+use mysqli;
+use traits\UserTrait;
+use traits\ViewTrait;
+
+
+class UserController{
+
+use UserTrait;
+use ViewTrait;
+
+function account(){
+    $this->show("account");
+}
+
+
+function emailkeres($connection){
+
+$user= new User($connection);
+
+$userdata=$user->select(["id","name","email", "password"])->where ("email", "=", "{$_POST['email']}")->selectösszegzesfirst()
+;
+
+ if ($userdata === null){ $_SESSION["flash"]["errors"][]="Hibás adatok";}
+
+else{password_verify($_POST["password"],$userdata["password"] ); 
+    
+
+//$this->ComparPassword("password", $userdata['password']);
+}
+
+if(!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0){  $_SESSION["user"]=$userdata;
+
+
+
+
+    header("location:/profile"); exit;
+}
+
+else{header("location:/account"); exit;}
+
+}
+
+
+
+}

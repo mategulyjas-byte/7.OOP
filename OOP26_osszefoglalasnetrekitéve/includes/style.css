@@ -1,0 +1,8 @@
+/* form > div:first-child {font-weight: bold; font-size: larger !important;}    Regisztrációs űrlap-fejlécének formázása */
+
+/* div label{font-weight: bolder; text-shadow: 0 0 20px yellow;}   Regisztrációs űrlap input mezőinek árnyékolása */
+
+.citytable{ max-height: 500px; overflow-y: auto;}
+
+.citytable thead{position: sticky; top: 0;}
+
