@@ -17,7 +17,7 @@ use controllers\TableController;
 use controllers\UserController;
 use controllers\LogoutController;
 use controllers\TableCityController;
-use Odbc\Connection;
+use controllers\SarkozController;
 
 $pagecontroller = new PageController;
 $guestcontroller = new GuestController;
@@ -26,6 +26,7 @@ $usercontroller = new UserController;
 $logoutcontroller = new LogoutController;
 $datamodificationcontroller= new DataModificationController;
 $tablecitycontroller= new TableCityController;
+$sarkozcontroller= new SarkozController;
 
 $url = $_SERVER["REQUEST_URI"];
 
@@ -80,6 +81,11 @@ switch ($url) {
             if($_SERVER["REQUEST_METHOD"]=== "POST"){
         $tablecitycontroller->tablecityprocess($connection);} else{$tablecitycontroller->tablecity($connection);}
         break;
+
+
+    case '/sarkoz':
+            if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozcontroller->sarkozprocess($connection);} else{ $sarkozcontroller->sarkoz();}
+
 
     default:
         http_response_code(400);

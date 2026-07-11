@@ -25,19 +25,18 @@ $user= new User($connection);
 $userdata=$user->select(["id","name","email", "password"])->where ("email", "=", "{$_POST['email']}")->selectösszegzesfirst()
 ;
 
- if ($userdata === null){ $_SESSION["flash"]["errors"][]="Hibás adatok";}
 
-else{password_verify($_POST["password"],$userdata["password"] ); 
+
+ if ($userdata === null ||    (password_verify($_POST["password"],$userdata["password"] ) ==false )){ $_SESSION["flash"]["errors"][]="Hibás adatok";}
+
+
+if($userdata !== null && (password_verify($_POST["password"],$userdata["password"] ) == true)
     
-
-//$this->ComparPassword("password", $userdata['password']);
-}
-
-if(!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0){  $_SESSION["user"]=$userdata;
+ && (!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0)){  $_SESSION["user"]=$userdata;
 
 
 
-
+$_SESSION["flash"]["success"]="Siekres belépés";
     header("location:/profile"); exit;
 }
 
