@@ -18,6 +18,7 @@ use controllers\UserController;
 use controllers\LogoutController;
 use controllers\TableCityController;
 use controllers\SarkozController;
+use controllers\SarkozInfoController;                ;
 
 $pagecontroller = new PageController;
 $guestcontroller = new GuestController;
@@ -27,6 +28,7 @@ $logoutcontroller = new LogoutController;
 $datamodificationcontroller= new DataModificationController;
 $tablecitycontroller= new TableCityController;
 $sarkozcontroller= new SarkozController;
+$sarkozinfocontroller= new SarkozInfoController;
 
 $url = $_SERVER["REQUEST_URI"];
 
@@ -84,9 +86,13 @@ switch ($url) {
 
 
     case '/sarkoz':
-            if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozcontroller->sarkozprocess($connection);} else{ $sarkozcontroller->sarkoz();}
+            if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozcontroller->sarkozprocess($connection);} else{ $sarkozcontroller->sarkoz($connection);}
+        break;
+    case '/sarkozinfo':
+            
+            if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozinfocontroller->sarkozinfoprocess($connection);} else{ $sarkozinfocontroller->sarkozinfo($connection);}
 
-
+    break;
     default:
         http_response_code(400);
         break;
