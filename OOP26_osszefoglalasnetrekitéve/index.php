@@ -8,7 +8,7 @@ spl_autoload_register(function ($file2) {
     include __DIR__ . "/$file2.php";
 });
 
-$connection = mysqli_connect("mysql.omega", "mate", "jawa207210", "mate");
+$connection = mysqli_connect("mysqli.omega", "mate", "Jawa207210", "mate");
 
 use controllers\DataModificationController;
 use controllers\PageController;
@@ -17,7 +17,8 @@ use controllers\TableController;
 use controllers\UserController;
 use controllers\LogoutController;
 use controllers\TableCityController;
-use Odbc\Connection;
+use controllers\SarkozController;
+use controllers\SarkozInfoController;                ;
 
 $pagecontroller = new PageController;
 $guestcontroller = new GuestController;
@@ -26,6 +27,8 @@ $usercontroller = new UserController;
 $logoutcontroller = new LogoutController;
 $datamodificationcontroller= new DataModificationController;
 $tablecitycontroller= new TableCityController;
+$sarkozcontroller= new SarkozController;
+$sarkozinfocontroller= new SarkozInfoController;
 
 $url = $_SERVER["REQUEST_URI"];
 
@@ -81,6 +84,15 @@ switch ($url) {
         $tablecitycontroller->tablecityprocess($connection);} else{$tablecitycontroller->tablecity($connection);}
         break;
 
+
+    case '/sarkoz':
+            if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozcontroller->sarkozprocess($connection);} else{ $sarkozcontroller->sarkoz($connection);}
+        break;
+    case '/sarkozinfo':
+            
+            if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozinfocontroller->sarkozinfoprocess($connection);} else{ $sarkozinfocontroller->sarkozinfo($connection);}
+
+    break;
     default:
         http_response_code(400);
         break;

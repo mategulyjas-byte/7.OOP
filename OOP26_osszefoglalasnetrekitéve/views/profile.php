@@ -14,6 +14,17 @@ include __DIR__."/../includes/head.php"?>
 
 
 
+  <div class="container text-start mt-4" style="max-width: 500px; ">
+                <?php
+             
+                    if (isset($_SESSION["flash"]["success"])) {
+                        print "<div class='alert alert-success text-center'>";
+                        print $_SESSION["flash"]["success"];
+                        print "</div>";
+                    }
+                ?>
+
+
 
 
 

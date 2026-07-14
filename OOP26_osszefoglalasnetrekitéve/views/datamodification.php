@@ -14,21 +14,23 @@ include __DIR__ . "/../includes/head.php" ?>
 
             <div>Adatok módosítása </div>
 
- <div class="container text-start mt-4"   style="max-width: 500px; ">
+            <div class="container text-start mt-4" style="max-width: 500px; ">
                 <?php
                 if (isset($_SESSION["flash"]["errors"])) {
                     print "<div class='alert alert-danger'>";
                     print "<ul>";
-                    foreach ($_SESSION["flash"]["errors"] as $error){
-                    print "<li> $error </li>";}
+                    foreach ($_SESSION["flash"]["errors"] as $error) {
+                        print "<li> $error </li>";
+                    }
                     print "</ul>";
                     print "</div>";
+                } else {
+                    if (isset($_SESSION["flash"]["success"])) {
+                        print "<div class='alert alert-success text-center'>";
+                        print $_SESSION["flash"]["success"];
+                        print "</div>";
                     }
-
-                else{if(isset($_SESSION["flash"]["success"])){ print "<div class='alert alert-success text-center'>";
-                print $_SESSION["flash"]["success"];
-                print "</div>";
-                }}
+                }
 
                 ?>
             </div>
@@ -41,31 +43,28 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
-            
 
-            <div class="container text-start mt-4"   style="max-width: 500px; ">
-         
+
+            <div class="container text-start mt-4" style="max-width: 500px; ">
+
             </div>
 
             <div class="container mx-auto row col-6 mt-4">
                 <label for="name">Név</label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="Add meg a neved"
-                value="<?php  print ($_SESSION["flash"]["inputs"]["name"] ?? $_SESSION["user"]["name"] ?? "");?>"
-                >
+                    value="<?php print($_SESSION["flash"]["inputs"]["name"] ?? $_SESSION["user"]["name"] ?? ""); ?>">
             </div>
 
             <div class="container mx-auto row col-6  mt-4">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Add meg az email-címed"
-                value="<?php print $_SESSION["user"]["email"] ?>"
-                >
+                    value="<?php print $_SESSION["user"]["email"] ?>">
             </div>
 
             <div class="container mx-auto row col-6  mt-4">
                 <label for="password">Jelszó</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Add meg a jelszót"
-                value="<?php print $_SESSION["user"]["password"]  ?>" 
-                >
+                    value="<?php print $_SESSION["user"]["password"]  ?>">
             </div>
 
             <div class="container mx-auto row col-2  mt-4">

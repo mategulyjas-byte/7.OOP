@@ -25,7 +25,7 @@ function tablecityprocess($connection){
 $city = new City($connection);
 
 
-
+;
 
 
 if(isset($_POST["torles"])){$city->delete()->wheredelete("tid", "=", $_POST["id"])->deleteosszegzes();}

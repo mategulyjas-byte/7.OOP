@@ -39,7 +39,7 @@ class DataModificationController
             exit;
         }
         
-        
+        $_POST["password"]= password_hash($_POST["password"], PASSWORD_DEFAULT);
         
         
         if (empty($_SESSION["flash"]["errors"])) {

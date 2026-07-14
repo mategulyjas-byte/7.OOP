@@ -54,6 +54,19 @@ class Modell
         return $this;
     }
 
+ function wherelikeselect($oszlopnev, $ertek)
+    {
+
+        if ((stripos("$this->beirtekek", "where") === false)) {
+            $whereorand = "where";
+        } else {
+            $whereorand = "and";
+        }
+        $this->beirtekek .= "$whereorand $oszlopnev LIKE '$ertek'";
+        return $this;
+    }
+
+
     function orderby($oszlopnev, $ascdesc)
     {
 

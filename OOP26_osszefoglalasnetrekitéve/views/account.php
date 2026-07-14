@@ -14,6 +14,35 @@ include __DIR__ . "/../includes/head.php" ?>
 
             <div>Belépés</div>
 
+
+            <div class="container text-start mt-4" style="max-width: 500px; ">
+                <?php
+                if (isset($_SESSION["flash"]["errors"])) {
+                    print "<div class='alert alert-danger'>";
+                    print "<ul>";
+                    foreach ($_SESSION["flash"]["errors"] as $error) {
+                        print "<li> $error </li>";
+                    }
+                    print "</ul>";
+                    print "</div>";
+                } 
+
+                ?>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             <div class="container mx-auto row col-6  mt-4">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Add meg az email-címed">
