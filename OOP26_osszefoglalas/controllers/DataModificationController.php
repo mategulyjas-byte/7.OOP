@@ -4,6 +4,7 @@ namespace controllers;
 
 use traits\ViewTrait;
 use modells\User;
+use modells\SarkozInfo;
 use traits\ValidationTrait;
 
 class DataModificationController
@@ -45,6 +46,19 @@ class DataModificationController
         if (empty($_SESSION["flash"]["errors"])) {
 
             $user->update()->ertekek2("name", $_POST["name"])->ertekek2("email", $_POST["email"])->ertekek2("password", $_POST["password"])->whereupdate("id", "=", $_SESSION["user"]["id"])->updateosszegzes();
+//
+
+
+
+
+$sarkozinfo = new SarkozInfo($connection);
+
+            $sarkozinfo->update()->ertekek2("name", $_POST["name"])->whereupdate("name", "=", $_SESSION["user"]["name"])->updateosszegzes();
+
+
+
+            //
+
 
 
             $_SESSION["user"]["name"] = $_POST["name"];

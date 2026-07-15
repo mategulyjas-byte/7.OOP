@@ -64,11 +64,7 @@ include __DIR__ . "/../includes/head.php" ?>
             <div class="container mx-auto row col-6  mt-4">
                 <label for="password">Jelszó</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="Add meg a jelszót"
-                    
-                    >
-
-                           <!-- $_POST["password"]= password_hash($_POST["password"], PASSWORD_DEFAULT); -->
-
+                    value="">
             </div>
 
             <div class="container mx-auto row col-2  mt-4">

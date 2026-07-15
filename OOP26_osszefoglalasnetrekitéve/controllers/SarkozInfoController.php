@@ -35,6 +35,7 @@ class SarkozInfoController
 
 if(isset($_POST["torles"])){$sarkozinfo->delete()->wheredelete("id", "=", $_POST["idkeres"])->deleteosszegzes();}
 
+if(isset($_POST["infomod"]) && !empty($_POST["ujinfo"])){$sarkozinfo->update()->ertekek2("info",$_POST["ujinfo"])->whereupdate("id", "=", $_POST["tid"])->updateosszegzes();}
 
 
 

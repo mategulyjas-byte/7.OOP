@@ -1,10 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-
 session_start();
 include __DIR__ . "/includes/config.php";
 
@@ -12,8 +7,8 @@ spl_autoload_register(function ($file2) {
     $file2 = (str_replace("\\", "/", $file2));
     include __DIR__ . "/$file2.php";
 });
-$connection = mysqli_connect("localhost", "mate", "Jawa207210", "mate");
 
+$connection = mysqli_connect("localhost", "mate", "Jawa207210", "mate");
 
 use controllers\DataModificationController;
 use controllers\PageController;
@@ -35,11 +30,10 @@ $tablecitycontroller= new TableCityController;
 $sarkozcontroller= new SarkozController;
 $sarkozinfocontroller= new SarkozInfoController;
 
-
-
 //$url = $_SERVER["REQUEST_URI"];
 
 $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+
 
 switch ($url) {
     case '/':

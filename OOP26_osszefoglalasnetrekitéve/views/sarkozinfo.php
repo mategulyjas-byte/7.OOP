@@ -92,8 +92,28 @@ include __DIR__ . "/../includes/head.php" ?>
                             <?php
 
 
-                            print $sarkozitelepules["info"];
+                           print $sarkozitelepules["info"];
+
+
+                           
                          ?>
+                        <?php if($_SESSION["user"]["name"] === $sarkozitelepules["name"]){
+                        
+                        
+                        ?>
+                         <form action="/sarkozinfo" method="post">
+                                    <input type="hidden" name="tid" value="<?php print $sarkozitelepules["id"] ?>">
+                                    <input type="text" name="ujinfo" value ="<?php print $sarkozitelepules["info"] ?? "" ?>">
+                                    <button name="infomod">Módosítás</button>
+                                </form>
+ 
+
+                            
+<?php ;} ?>
+
+
+
+
 
 
                             </td>
@@ -107,7 +127,7 @@ include __DIR__ . "/../includes/head.php" ?>
  </td>
 
                             <?php 
-                            if (($_SESSION["user"]["email"] === "admin@admin.hu")) { ?>
+                            if (($_SESSION["user"]["email"] === "admin@admin.hu") || $_SESSION["user"]["name"]=== $sarkozitelepules["name"]) { ?>
                                 <td>
                                     <form action="/sarkozinfo" method="post">
                                         <input type="hidden" name="idkeres" value="<?php print $sarkozitelepules["id"] ?>">
