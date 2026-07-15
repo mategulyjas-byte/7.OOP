@@ -112,7 +112,21 @@ include __DIR__ . "/../includes/head.php" ?>
 
                     <label class="form-label" for="sarkozitelepules">Írja ide, mely településről írna véleményt</label>
                     <input class="form-control" type="search" name="sarkozitelepules" id="sarkozitelepules" value="<?php print $_POST["sarkozitelepules"] ?? "" ?>">
-                     <button name="telepulesvalaszt" class="btn btn-primary w-auto">Település kereséses</button>
+                    
+
+
+
+
+
+
+
+
+                   
+
+
+
+                    
+                    <button name="telepulesvalaszt" class="btn btn-primary w-auto">Település kereséses</button>
                 </div>
             </form>
 <?php ;} else{?>
@@ -128,6 +142,16 @@ include __DIR__ . "/../includes/head.php" ?>
                 <input type="hidden" name="sarkozitelepules" id="" value="<?php print $_SESSION["sarkozitelepules"] ?? "" ?>">
                 <input type="hidden" name=name  value="<?php print $_SESSION["user"]["name"] ?? "" ?>">
                 <input class="form-control" type="text" name="info" id="info">
+
+
+ <!-- FIGYELEM ezt tettem bel új sorként -->
+                    <input type="hidden" name=nameid value="<?php print $_SESSION["user"]["id"] ?>">
+                 
+                    <!-- ezt tettem gele új sorként -->
+
+
+
+
                 <button name="infoad" class="btn btn-primary w-auto">Infromáció hozáadása</button>
 
             </div>

@@ -71,7 +71,9 @@ if (isset($_POST["telepulesvalaszt"]) &&  !empty($this->data)){$_SESSION["flash"
 
 if(!empty($_SESSION["sarkozitelepules"]) && !empty($_POST["info"]) && isset($_POST["infoad"])){    
     
-           $sarkozinfo->insert(["sarkozitelepules","info","name"]); unset($_SESSION["sarkozitelepules"]);}
+
+
+           $sarkozinfo->insert(["sarkozitelepules","info","name","nameid"]); unset($_SESSION["sarkozitelepules"]);}
 
 if (isset ($_POST["infoad"])){ unset($_SESSION["flash"]);}
 
