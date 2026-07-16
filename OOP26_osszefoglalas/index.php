@@ -18,7 +18,8 @@ use controllers\UserController;
 use controllers\LogoutController;
 use controllers\TableCityController;
 use controllers\SarkozController;
-use controllers\SarkozInfoController;                ;
+use controllers\SarkozInfoController; 
+use controllers\VoteController;               ;
 
 $pagecontroller = new PageController;
 $guestcontroller = new GuestController;
@@ -29,6 +30,7 @@ $datamodificationcontroller= new DataModificationController;
 $tablecitycontroller= new TableCityController;
 $sarkozcontroller= new SarkozController;
 $sarkozinfocontroller= new SarkozInfoController;
+$votecontroller= new VoteController;
 
 //$url = $_SERVER["REQUEST_URI"];
 
@@ -96,6 +98,14 @@ switch ($url) {
             if($_SERVER["REQUEST_METHOD"] === "POST"){ $sarkozinfocontroller->sarkozinfoprocess($connection);} else{ $sarkozinfocontroller->sarkozinfo($connection);}
 
     break;
+
+
+
+case '/vote':
+            
+            if($_SERVER["REQUEST_METHOD"] === "POST"){ $votecontroller->voteprocess($connection);} else{ $votecontroller->vote($connection);}
+
+break;
     default:
         http_response_code(400);
         break;
