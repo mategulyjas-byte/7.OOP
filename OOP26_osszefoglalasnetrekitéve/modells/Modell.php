@@ -125,6 +125,15 @@ class Modell
         return $this;
     }
 
+//UPDATE sarkoz SET szavazas = szavazas + 1 WHERE id = 13;
+
+function upadateset($oszlopnev ,$szam){
+    $this->beirtertekek3.=" SET  $oszlopnev = $oszlopnev + $szam"; return $this;}
+
+
+
+
+
     function ertekek($ujnev)
     {$this->beirtertekek3.=" set name = '$ujnev' "; return $this;
 
