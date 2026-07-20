@@ -37,6 +37,8 @@ $sarkoz->update()->upadateset("szavazas", "1")->whereupdate("id", "=", $_POST["s
 
 
 
+if(isset($_POST["szavazatmod"])){$sarkoz->update()->ertekek2("szavazas",$_POST["szavazas"])->whereupdate("id", "=", $_POST["id"])->updateosszegzes();}
+
 
 
 if (isset($_POST["szavaz"]) && !empty($_POST["szavazas"])) {$_SESSION["flash"]["success"]="Köszönjük a szavazást";}

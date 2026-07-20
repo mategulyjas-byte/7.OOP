@@ -44,7 +44,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
-        <form action="" method="post">
+        <form action="/vote" method="post">
 
             <?php foreach ($data as $sarkozitelepules) {; ?>
 
@@ -96,7 +96,31 @@ include __DIR__ . "/../includes/head.php" ?>
                         </td>
 
                         <td>
-                            <?php print $sarkozitelepules["szavazas"] ?>
+                            <?php // print $sarkozitelepules["szavazas"] ?>
+
+
+
+
+                            <?php if (($_SESSION["user"]["email"] === "admin@admin.hu")) { 
+
+                                
+                                print $sarkozitelepules["szavazas"] ?>
+
+                                <form action="/vote" method="post">
+                                    <input type="hidden" name="id" value="<?php print $sarkozitelepules["id"] ?>">
+                                    <input type="text" name="szavazas">
+                                    <button name="szavazatmod">Módosítás</button>
+                                </form>
+                                <?php ;} else{print $sarkozitelepules["szavazas"]; } ?>
+
+
+
+
+
+
+
+
+
 
                         </td>
 

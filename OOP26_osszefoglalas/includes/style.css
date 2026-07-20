@@ -1,8 +1,72 @@
-/* form > div:first-child {font-weight: bold; font-size: larger !important;}    Regisztrációs űrlap-fejlécének formázása */
+/* .citytable{ max-height: 500px; overflow-y: auto;} */
 
-/* div label{font-weight: bolder; text-shadow: 0 0 20px yellow;}   Regisztrációs űrlap input mezőinek árnyékolása */
+/* .citytable thead{position: sticky; top: 0;} */
 
-.citytable{ max-height: 500px; overflow-y: auto;}
 
-.citytable thead{position: sticky; top: 0;}
 
+* {
+    font-family: "Anek Telugu", sans-serif;
+
+}
+
+.m1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    ;
+    position: sticky;
+    top: 0;
+}
+
+.div1 {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    align-items: center;
+    margin: auto;
+}
+
+
+.div1>div,
+.div3>div {
+    font-size: small !important
+}
+
+.div1>div,
+.div1 h2,
+.div3 h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+    padding: 10px;
+
+}
+
+.div3>div{padding: 10px;}
+
+
+
+
+.div2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: larger;
+
+}
+
+img {
+    padding: 20px;
+}
+
+
+
+
+.div3 {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    align-items: center;
+    margin: auto;
+}

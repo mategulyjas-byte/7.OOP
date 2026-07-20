@@ -9,10 +9,15 @@ include __DIR__ . "/../includes/head.php" ?>
 <body>
     <?php include __DIR__ . "/../includes/menu.php" ?>
 
-    <div class="container mx-auto text-center gap-3 mt-2" style="max-width: 900px;">
+<div class="div3">
+
+
+<div> Regisztráció</div>
+
+    <div class="container mx-auto text-center gap-3 mt-2 !important" style="max-width: 900px;">
         <form action="/register" method="post" novalidate>
 
-            <div>Regiszrációs űrlap</div>
+            <h2>Regiszrációs űrlap</h2>
 
 
             <div class="container text-start mt-4"   style="max-width: 500px; ">
@@ -73,7 +78,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
-
+</div>
 
 
     <?php include __DIR__ . "/../includes/scripts.php" ?>
