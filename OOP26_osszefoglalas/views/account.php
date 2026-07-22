@@ -9,13 +9,17 @@ include __DIR__ . "/../includes/head.php" ?>
 <body>
     <?php include __DIR__ . "/../includes/menu.php" ?>
 
-    <div class="container mx-auto text-center gap-3 mt-2" style="max-width: 900px;">
+
+<div class="hp_egeszoldal">
+    
+    <div  class="hp_oldalkiscim"  >Belépés</div>
+    <div class="container mx-auto text-center gap-3 mt-2 " style="max-width: 900px ">
         <form action="/account" method="post">
 
-            <div>Belépés</div>
+            <h2  class="hp_nagycim"  >Belépés a profilomba</h2>
 
 
-            <div class="container text-start mt-4" style="max-width: 500px; ">
+            <div class="container text-start mt-4 " style="max-width: 500px; ">
                 <?php
                 if (isset($_SESSION["flash"]["errors"])) {
                     print "<div class='alert alert-danger'>";
@@ -64,7 +68,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
-
+</div>
 
 
     <?php include __DIR__ . "/../includes/scripts.php" ?>

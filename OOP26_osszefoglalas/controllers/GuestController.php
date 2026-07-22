@@ -13,8 +13,9 @@ class GuestController
 
 
     function register(){
+$title="Regisztráció";
 
-    $this->show("/register");
+    $this->show("/register", compact("title"));
     }
 
     function registerprocess($connection)

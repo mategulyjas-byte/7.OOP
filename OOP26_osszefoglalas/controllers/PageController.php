@@ -29,12 +29,6 @@ class PageController
         $this->show("profile", compact("title"));
     }
 
-    function datamodification()
-    {
-                $title = "Adatmódosítás";
 
-        $this->show("datamodification", compact("title"));
-    }
 }
 
-//$pagecontroller = new PageController;

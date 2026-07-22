@@ -11,9 +11,20 @@ include __DIR__ . "/../includes/head.php" ?>
     <?php include __DIR__ . "/../includes/menu.php" ?>
 
 
+    <div class="hp_egeszoldal">
+
+
+        <div class="hp_oldalkiscim">Ti írtátok</div>
+
+        <h2 class="hp_nagycim">Az alábbi véleményeket, élménybeszálókat írtátok a településekkel kapcsolatban</h2>
+
 
 
     <div class="container-fluid mx-auto  text-center mt-4 px-5 " style="max-width: 1000px,  ">
+
+
+    <div class="tablecity_kereso">
+
         <form action="/sarkozinfo" method="post">
             <div style="display: flex ; justify-content:center">
                 <div class=" col-auto">
@@ -37,8 +48,6 @@ include __DIR__ . "/../includes/head.php" ?>
                 </div>
 
 
-
-
             </div>
 
             <div>
@@ -46,7 +55,7 @@ include __DIR__ . "/../includes/head.php" ?>
             </div>
         </form>
 
-
+</div>
 
         <div class="citytable mx-auto" style="max-width: 2000px;">
 
@@ -149,6 +158,10 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
         </div>
+
+
+    </div>
+
 
 
     </div>

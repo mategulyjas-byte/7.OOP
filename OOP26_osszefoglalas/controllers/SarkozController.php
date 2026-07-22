@@ -65,7 +65,7 @@ else
 
 { foreach ($this->data as $key=>$value){$_SESSION[$key]= $value;};}
 
-if (isset($_POST["telepulesvalaszt"]) &&  !empty($this->data)){$_SESSION["flash"]["success"]="Írja";}
+if (isset($_POST["telepulesvalaszt"]) &&  !empty($this->data)){$_SESSION["flash"]["success"]="Írja ide észrevételeit, tapasztalatai ". $_POST["sarkozitelepules"]."  településsel kapcsolatban";}
 
 
 

@@ -10,14 +10,14 @@ include __DIR__ . "/../includes/head.php" ?>
 
    <?php include __DIR__ . "/../includes/menu.php" ?>
 
-   <div class="div1">
+   <div class="hp_egeszoldal">
 
 
-      <div>Rólunk</div>
+      <div class=" hp_oldalkiscim">Rólunk</div>
 
-      <h2> Bemutatkozás</h2>
+      <h2  class="hp_nagycim" > Bemutatkozás</h2>
 
-      <div class="div2">
+      <div class="hp_szoveg">
          Üdvözlünk a kulisszák mögött! Mi egy olyan elhivatott csapat – és egyben egy nyitott közösség
          – vagyunk, akiket mélyen lenyűgöz a Kalocsai Sárköz páratlan kulturális és történelmi öröksége.Ez a
          honlap nem egy hagyományos, lezárt információs portál, hanem egy élő, közösségi enciklopédia. Az ötlet
@@ -35,7 +35,7 @@ include __DIR__ . "/../includes/head.php" ?>
          Köszönjük, hogy velünk tartasz az értékőrzésben és a közös írásban!
       </div>
 
-      <img style="max-height: 300px;" src="https://hirmondo.budakeszi.hu/wp-content/uploads/2015/05/kaptarko1.JPG" alt="">
+      <img class="hp_img" style="max-height: 300px;" src="https://hirmondo.budakeszi.hu/wp-content/uploads/2015/05/kaptarko1.JPG" alt="">
 
    </div>
 
