@@ -76,6 +76,10 @@ include __DIR__ . "/../includes/head.php" ?>
                     Szavazatok száma
                 </th>
 
+                <th>
+                    Infromáció  a településről
+                </th>
+
             </thead>
 
             <tbody>
@@ -96,8 +100,8 @@ include __DIR__ . "/../includes/head.php" ?>
                         </td>
 
                         <td>
-                            <?php // print $sarkozitelepules["szavazas"] ?>
 
+                        
 
 
 
@@ -122,6 +126,11 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
+                        </td>
+
+
+                         <td>
+                                <a href="<?php print $sarkozitelepules["link"];?>">  Településről</a>
                         </td>
 
 

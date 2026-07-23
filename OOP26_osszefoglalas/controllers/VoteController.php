@@ -15,7 +15,7 @@ function vote($connection){
 
 $sarkoz=new Sarkoz($connection);
 
-$data=$sarkoz->select(["id", "sarkozitelepules","szavazas"]);
+$data=$sarkoz->select(["id", "sarkozitelepules","szavazas", "link"]);
 $data= $sarkoz->selectösszegzes();
 $this->show("vote",$data);
 }
