@@ -131,6 +131,10 @@ function upadateset($oszlopnev ,$szam){
     $this->beirtertekek3.=" SET  $oszlopnev = $oszlopnev + $szam"; return $this;}
 
 
+function upadatesetkivonas($oszlopnev ,$szam){
+    $this->beirtertekek3.=" SET  $oszlopnev = $oszlopnev - $szam"; return $this;}
+
+
 
 
 

@@ -49,15 +49,32 @@ include __DIR__ . "/../includes/head.php" ?>
             <?php foreach ($data as $sarkozitelepules) {; ?>
 
                 <label for="telepules"> <?php print $sarkozitelepules["sarkozitelepules"]  ?> </label>
-                <input type="radio" name="szavazas" value="<?php print $sarkozitelepules["id"]  ?>">
+
+                <input type="hidden" name="id" value=" <?php print $sarkozitelepules["id"]?>"> 
+
+                <input type="hidden" name="userid" value="<?php print $_SESSION["user"]["id"]?>">
+
+                <input type="radio" name="szavazas" value="<?php print $sarkozitelepules["id"]   ?>">
 
             <?php ;
             } ?>
             <button name="szavaz"> Szavazok</button>
+
         </form>
 
-
         <?php  ?>
+
+<br>
+<form action="/vote" method="post">
+
+
+
+<input type="submit"  name="torles" value="Törlöm a szavazatomat">
+
+</form>
+
+
+
 
 
 
