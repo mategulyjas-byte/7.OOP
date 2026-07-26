@@ -58,7 +58,7 @@ include __DIR__ . "/../includes/head.php" ?>
                         </thead>
 
                         <tbody>
-                            <?php foreach ($data as $sarkozitelepules2) {  ?>
+                            <?php foreach ($data["data"] as $sarkozitelepules2) {  ?>
                                 <tr>
                                     <td>
                                         <?php print $sarkozitelepules2["sarkozitelepules"] ?>

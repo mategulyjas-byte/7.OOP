@@ -17,50 +17,52 @@ include __DIR__ . "/../includes/head.php" ?>
 
         <h2 class="hp_nagycim">Települések adatai</h2>
 
-        <div class="container-fluid mx-auto  text-center mt-4 px-5 " style="max-width: 1000px,  ">
+        <div    class="container mx-auto  text-center mt-4 px-1"> 
 
 
             <div class="tablecity_kereso">
 
                 <form action="/tablecity" method="post">
-                    <div style="display: flex ; justify-content:center">
-                        <div class=" col-auto">
+                    
+                    <div style="display:flex ; justify-content:center; ">
+
+                        <div class="col-auto">
                             <label class="form-label" for="tid">Azonosító</label>
                             <input class="form-control" type="text" name="tid" id="tid" value="<?php  ?>"><br>
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto ">
                             <label class="form-label" for="telepules">Településnév</label>
                             <input class="form-control" type="text" name="telepules" id="telepules" value="<?php  ?>"><br>
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto">
                             <label class="form-label" for="telepulesresz">Településrész</label>
                             <input class="form-control" type="text" name="telepulesresz" id="telepulesresz" value="<?php  ?>"><br>
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto">
                             <label class="form-label" for="tkod">Településkód</label>
                             <input class="form-control" type="text" name="tkod" id="tkod" value="<?php  ?>"><br>
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto">
                             <label class="form-label" for="mkod">Megyekód</label>
                             <input class="form-control" type="text" name="mkod" id="mkod" value="<?php  ?>"><br>
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto">
                             <label class="form-label" for="irszam">Irányítószám</label>
                             <input class="form-control" type="text" name="irszam" id="irszam" value="<?php  ?>"><br>
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto">
                             <label class="form-label" for="nepesseg">Népesség tól</label>
                             <input placeholder="tól" class="form-control" type="number" min="0" max="300000" step="50" name="nepessegtol" id="nepesseg" value="<?php  ?>"><br>
 
                         </div>
 
-                        <div class=" col-auto">
+                        <div class="col-auto">
 
                             <label class="form-label" for="nepesseg">-ig</label>
 
@@ -112,7 +114,7 @@ include __DIR__ . "/../includes/head.php" ?>
                             </thead>
                 </div>
                 <tbody>
-                    <?php foreach ($data as $települes) {  ?>
+                    <?php foreach ($data["data"] as $települes) {  ?>
                         <tr>
 
                             <td>

@@ -67,7 +67,7 @@ switch ($url) {
 
     case '/datamodification':
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
-            $datamodificationcontroller->datamodification();
+            $datamodificationcontroller->datamodification($connection);
         } else {
             $datamodificationcontroller->datamodificationprocess($connection);
         }

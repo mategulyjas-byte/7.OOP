@@ -10,6 +10,16 @@ include __DIR__ . "/../includes/head.php" ?>
 
     <?php include __DIR__ . "/../includes/menu.php" ?>
 
+
+    <div class="hp_egeszoldal">
+
+
+        <div class="hp_oldalkiscim">Szavazás</div>
+
+        <h2 class="hp_nagycim">Szavazatok leadása az alábiak közül egy tetszőlegesen választott településre</h2>
+
+
+
     <div class="container-fluid mx-auto  text-center mt-4 px-5 " style="max-width: 1000px,  ">
 
     <div class=" container mx-auto" style="max-width: 2000px;">
@@ -46,7 +56,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
         <form action="/vote" method="post">
 
-            <?php foreach ($data as $sarkozitelepules) {; ?>
+            <?php foreach ($data["data"] as $sarkozitelepules) {; ?>
 
                 <label for="telepules"> <?php print $sarkozitelepules["sarkozitelepules"]  ?> </label>
 
@@ -66,6 +76,9 @@ include __DIR__ . "/../includes/head.php" ?>
 
 <br>
 <form action="/vote" method="post">
+
+<input type="hidden" name="torlendoid" value=" <?php print $sarkozitelepules["id"]?>"> 
+
 
 
 
@@ -105,7 +118,7 @@ include __DIR__ . "/../includes/head.php" ?>
                 <tr>
 
                     <?php
-                    foreach ($data as $sarkozitelepules) {
+                    foreach ($data["data"] as $sarkozitelepules) {
                     ?>
                         <td>
                             <?php print $sarkozitelepules["id"] ?>
@@ -147,7 +160,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
                          <td>
-                                <a href="<?php print $sarkozitelepules["link"];?>">  Településről</a>
+                                <a href="<?php print $sarkozitelepules["link"];?>" target="_blank">  Településről</a>
                         </td>
 
 
@@ -174,7 +187,7 @@ include __DIR__ . "/../includes/head.php" ?>
 </div>
 
 
-
+</div>
     <?php include __DIR__ . "/../includes/scripts.php" ?>
 </body>
 

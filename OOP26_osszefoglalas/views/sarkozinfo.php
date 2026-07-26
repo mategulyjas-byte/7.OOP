@@ -89,7 +89,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
                     </div>
                     <tbody>
-                        <?php foreach ($data as $sarkozitelepules) {  ?>
+                        <?php foreach ($data["data"] as $sarkozitelepules) {  ?>
                             <tr>
 
                                 <td>

@@ -65,24 +65,61 @@
     position: sticky !important;
     top: 0px !important;
     box-shadow: inset 0 0.2px white, inset 0 -0.2px 0 0 white !important
-
 }
 
-.sarkoz_table{
+.sarkoz_table {
     display: flex;
-justify-content: center;}
+    justify-content: center;
+}
 
 
-.sarkoz_table th{
+.sarkoz_table th {
     font-size: larger;
 }
 
-.sarkoz_table td{
+.sarkoz_table td {
     font-size: larger;
     color: darkorange;
 }
 
-.sarkoz_velemenybevitel{
-width: 500px;
+.sarkoz_velemenybevitel {
+    width: 500px;
+
+}
+
+
+@media screen and (max-width: 991.5px) {
+
+    .container {
+        width: 100% !important;
+    }
+
+
+
+    .tablecity_kereso {
+        position: static !important;
+        width: 100% !important;
+
+    }
+
+
+
+    .tablecity_kereso>form {
+        width: 100% !important;
+    }
+
+
+
+    .tablecity_kereso form>div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .tablecity_kereso form div>.col-auto {
+        width: 100%;
+    }
+
 
 }

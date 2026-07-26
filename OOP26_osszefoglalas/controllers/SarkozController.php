@@ -18,13 +18,13 @@ function sarkoz($connection){ unset($_SESSION["flash"]);
 
 $sarkoz= new Sarkoz($connection);
 
+$data=$this->data;
 
+if($_SERVER["REQUEST_METHOD"] =="GET"){ $data=$sarkoz->select(["sarkozitelepules"])->selectösszegzes();}
 
-if($_SERVER["REQUEST_METHOD"] =="GET"){ $this->adat=$sarkoz->select(["sarkozitelepules"])->selectösszegzes();}
-
-
+$title="Élmények megosztása"
 ;
-$this->show("sarkoz", $this->adat );
+$this->show("sarkoz",  compact("data","title"));
 }
 
 
@@ -35,17 +35,6 @@ function sarkozprocess($connection){
  
 $sarkoz = new Sarkoz($connection);
 $sarkozinfo = new SarkozInfo($connection);
-
-
-
-// $sarkoz= new Sarkoz($connection);
-// $this->adat=$sarkoz->select(["sarkozitelepules"])->selectösszegzes();
-// $this->show("sarkoz", $this->adat );
-
-
-
-
-
 
 
 

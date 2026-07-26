@@ -14,7 +14,10 @@ use UserTrait;
 use ViewTrait;
 
 function account(){
-    $this->show("account");
+
+
+$title="Belépés";
+    $this->show("account", compact("title"));
 }
 
 

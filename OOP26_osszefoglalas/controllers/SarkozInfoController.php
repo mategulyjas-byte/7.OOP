@@ -17,9 +17,11 @@ class SarkozInfoController
 
         $sarkozinfo = new SarkozInfo($connection);
 
+        $title="Ti írtátok";
         $data = $sarkozinfo->select(["id", "sarkozitelepules", "info", "name"]);
         $data = $sarkozinfo->selectösszegzes();
-        $this->show(("sarkozinfo"), $data);
+        
+        $this->show("sarkozinfo", compact("data", "title"));
         exit;
     }
 

@@ -40,6 +40,8 @@ include __DIR__ . "/../includes/head.php" ?>
                     ?>
                 </div>
 
+
+
                 <div class="container mx-auto row col-6 mt-4">
                     <label for="name">Név</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Add meg a neved"
