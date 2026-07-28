@@ -20,12 +20,13 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
-        <div class="container-fluid mx-auto  text-center mt-4 px-5 " style="max-width: 1000px,  ">
+        <div class="container mx-auto   text-center mt-4 px-1 " style="max-width: 10000px,  ">
 
 
             <div class="tablecity_kereso">
 
                 <form action="/sarkozinfo" method="post">
+
                     <div style="display: flex ; justify-content:center">
                         <div class=" col-auto">
                             <label class="form-label" for="id">Azonosító</label>

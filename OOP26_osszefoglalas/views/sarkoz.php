@@ -20,7 +20,7 @@ include __DIR__ . "/../includes/head.php" ?>
         <h2 class="hp_nagycim">Élmények megosztása egy kiválasztott településsel kapcsolatban</h2>
 
 
-        <div class="mx-auto  text-center mt-4 px-5 " style="max-width: 1000px,  ">
+        <div class="mx-auto  text-center mt-4 px-5 d-flex flex-column alig-item-center w-100" style="max-width: 1000px;  ">
 
             <div class="container text-start mt-4" style="max-width: 500px; ">
                 <?php

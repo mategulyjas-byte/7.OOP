@@ -33,6 +33,13 @@
     padding: 20px;
 }
 
+.hp_nagycim{
+
+    text-align: center;
+    align-items: center;
+
+}
+
 .hp_szoveg::first-letter {
     font-weight: bolder;
     font-size: larger;
@@ -123,3 +130,4 @@
 
 
 }
+

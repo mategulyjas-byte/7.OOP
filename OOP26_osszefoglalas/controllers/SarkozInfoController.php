@@ -63,6 +63,6 @@ if(isset($_POST["infomod"]) && !empty($_POST["ujinfo"])){$sarkozinfo->update()->
 
 
 
-        $this->show("sarkozinfo", $data);
+        $this->show("sarkozinfo", compact("data"));
     }
 }
