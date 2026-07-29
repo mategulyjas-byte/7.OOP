@@ -68,7 +68,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
                 <table class=" table table-bordered mx-auto mt-4 text-center" , style="max-width: 2000px">
                   
-                <div class="tablecity_thead">
+                <div class="">
  
                 <thead>
 
