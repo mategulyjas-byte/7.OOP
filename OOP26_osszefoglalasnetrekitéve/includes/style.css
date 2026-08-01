@@ -1,8 +1,196 @@
-/* form > div:first-child {font-weight: bold; font-size: larger !important;}    Regisztrációs űrlap-fejlécének formázása */
+/* .citytable{ max-height: 500px; overflow-y: auto;} */
 
-/* div label{font-weight: bolder; text-shadow: 0 0 20px yellow;}   Regisztrációs űrlap input mezőinek árnyékolása */
+/* .citytable thead{position: sticky; top: 0;} */
 
-.citytable{ max-height: 500px; overflow-y: auto;}
 
-.citytable thead{position: sticky; top: 0;}
+
+* {
+    font-family: "Anek Telugu", sans-serif;
+
+}
+
+.m1 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    ;
+    position: sticky;
+    top: 0;
+    background-color: #212529 !important;
+    z-index: 1000 !important;
+
+}
+
+.hp_egeszoldal {
+    display: flex;
+    flex-direction: column;
+    max-width: 80% !important;
+    margin: auto;
+    align-items: center;
+}
+
+.hp_oldalkiscim {
+    padding: 20px;
+}
+
+.hp_nagycim{
+
+    text-align: center;
+    align-items: center;
+
+}
+
+.hp_szoveg::first-letter {
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.hp_img {
+    border-radius: 100%;
+}
+
+
+.tablecity_kereso {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 6px;
+    background-color: #212529 !important;
+    z-index: 1000 !important;
+    padding-top: 5px;
+
+}
+
+.tablecity_table {
+    max-height: 500px;
+    overflow-y: auto;
+
+}
+
+
+
+.tablecity_table table thead tr th {
+    position: sticky !important;
+    top: 0px !important;
+    box-shadow: inset 0 0.2px white, inset 0 -0.2px 0 0 white !important
+}
+
+.sarkoz_table {
+    display: flex;
+    justify-content: center;
+}
+
+
+.sarkoz_table th {
+    font-size: larger;
+}
+
+.sarkoz_table td {
+    font-size: larger;
+    color: darkorange;
+}
+
+.sarkoz_velemenybevitel {
+    width: 500px;
+
+}
+
+.table_kereso{
+    display: flex;
+    flex-direction: column;
+    text-align: center !important;
+    align-items: center !important;
+    max-width: 100%;
+    position: sticky !important;
+    top: 50px !important;
+    background-color: #212529 !important;
+    z-index: 1000 !important;
+    margin-bottom: auto;
+
+}
+
+
+
+.table{
+    overflow-y: auto !important;
+    max-height: 500px !important;
+        background-color: #212529 !important;
+
+}
+
+
+.table table thead  th  {
+    position: sticky !important;
+    top: 27px !important;
+    box-shadow: inset 0 0.2px white, inset 0 -0.2px 0 0 white !important;
+        background-color: #212529 !important;
+
+    
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 991.5px) {
+
+    .container {
+        width: 100% !important;
+    }
+
+
+
+    .tablecity_kereso {
+        position: static !important;
+        width: 100% !important;
+
+    }
+
+
+
+    .tablecity_kereso>form {
+        width: 100% !important;
+    }
+
+
+
+    .tablecity_kereso form>div {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .tablecity_kereso form div>.col-auto {
+        width: 100%;
+    }
+
+
+    .table_kereso {
+        position: static !important;
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+.table table thead  th  {
+    position: sticky !important;
+    top: 0px !important;
+    box-shadow: inset 0 0.2px white, inset 0 -0.2px 0 0 white !important;
+        background-color: #212529 !important;
+
+
+
+/* .table_kereso >form{
+    display: flex;
+    flex-direction: column;
+    text-align: center !important;
+    align-items: center !important;
+    max-width: 100%;
+} */
+
+    
+}
 

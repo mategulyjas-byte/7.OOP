@@ -4,18 +4,31 @@ namespace controllers;
 
 use traits\ViewTrait;
 
-class PageController{
-use ViewTrait;
+class PageController
+{
+    use ViewTrait;
 
-function homepage(){$this->show("homepage");  }
+    function homepage()
+    {
+        $title = "Kezdőoldal";
 
-function about(){$this->show("about");  }
+        $this->show("homepage", compact("title"));
+    }
 
-function profile(){$this->show("profile");  }
+    function about()
+    {
+                $title = "Rólunk";
 
-function datamodification(){$this->show("datamodification");  }
+        $this->show("about", compact("title"));
+    }
+
+    function profile()
+    {
+                $title = "Profilom";
+
+        $this->show("profile", compact("title"));
+    }
 
 
 }
 
-//$pagecontroller = new PageController;

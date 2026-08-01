@@ -13,8 +13,9 @@ class DataModificationController
     use ViewTrait;
 
     function datamodification()
-    {
-        $this->show("datamodification");
+    { $title="Adatmódosítása";
+
+        $this->show("datamodification", compact("title") );
     }
 
     function datamodificationprocess($connection)

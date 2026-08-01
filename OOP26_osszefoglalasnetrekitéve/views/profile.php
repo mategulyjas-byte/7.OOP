@@ -10,8 +10,22 @@ include __DIR__."/../includes/head.php"?>
 
 <?php include __DIR__."/../includes/menu.php" ?> 
 
-<?php print $_SESSION["user"]["name"] ."<br>". $_SESSION["user"]["email"]  ?>
 
+<div class="hp_egeszoldal">
+
+        <div class="hp_oldalkiscim">Profilom</div>
+
+                <h2 class="hp_nagycim">Adataim</h2>
+
+
+<div class="hp_szoveg">
+<?php print  "Nevem: ". $_SESSION["user"]["name"] ?>
+</div>
+
+<div class="hp_szoveg">
+<?php print "E-mail címem: ". $_SESSION["user"]["email"]  ?>
+
+</div>
 
 
   <div class="container text-start mt-4" style="max-width: 500px; ">
@@ -26,7 +40,7 @@ include __DIR__."/../includes/head.php"?>
 
 
 
-
+</div>
 
 
 <?php include __DIR__."/../includes/scripts.php" ?>

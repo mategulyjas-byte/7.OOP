@@ -3,7 +3,6 @@
 namespace controllers;
 
 use modells\City;
-use tidy;
 use traits\ViewTrait;
 
 class TableCityController{
@@ -13,9 +12,15 @@ use ViewTrait;
 function tablecity($connection){
 
 $city =new City($connection);
+
+
 $data=$city->select(["tid","telepules","telepulesresz","tkod","mkod","irszam","nepesseg"]);
 $data= $city->selectösszegzes();
-$this->show("tablecity",$data);
+
+$title="Települések";
+
+
+$this->show("tablecity", compact("data","title") );
 
 }
 
@@ -67,7 +72,7 @@ $data= $city->selectösszegzes();
 
 
 
-$this->show("tablecity",$data);
+$this->show("tablecity", compact("data") );
 }
 
 

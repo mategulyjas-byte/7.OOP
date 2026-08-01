@@ -11,144 +11,169 @@ include __DIR__ . "/../includes/head.php" ?>
     <?php include __DIR__ . "/../includes/menu.php" ?>
 
 
+    <div class="hp_egeszoldal">
 
 
-    <div class="container-fluid mx-auto  text-center mt-4 px-5 " style="max-width: 1000px,  ">
-        <form action="/sarkozinfo" method="post">
-            <div style="display: flex ; justify-content:center">
-                <div class=" col-auto">
-                    <label class="form-label" for="id">Azonosító</label>
-                    <input class="form-control" type="text" name="id" id="id" value="<?php  ?>"><br>
-                </div>
+        <div class="hp_oldalkiscim">Ti írtátok</div>
 
-                <div class=" col-auto">
-                    <label class="form-label" for="sarkozitelepules">Településnév</label>
-                    <input class="form-control" type="text" name="sarkozitelepules" id="sarkozitelepules" value="<?php  ?>"><br>
-                </div>
-
-                <div class=" col-auto">
-                    <label class="form-label" for="info">Információ</label>
-                    <input class="form-control" type="text" name="info" id="info" value="<?php  ?>"><br>
-                </div>
-
-                <div class=" col-auto">
-                    <label class="form-label" for="name">Szerző</label>
-                    <input class="form-control" type="text" name="name" id="name" value="<?php  ?>"><br>
-                </div>
+        <h2 class="hp_nagycim">Az alábbi véleményeket, élménybeszálókat írtátok a településekkel kapcsolatban</h2>
 
 
 
+        <div class="container mx-auto   text-center mt-4 px-1 " style="max-width: 10000px,  ">
+
+
+            <div class="tablecity_kereso">
+
+                <form action="/sarkozinfo" method="post">
+
+                    <div style="display: flex ; justify-content:center">
+                        <div class=" col-auto">
+                            <label class="form-label" for="id">Azonosító</label>
+                            <input class="form-control" type="text" name="id" id="id" value="<?php  ?>"><br>
+                        </div>
+
+                        <div class=" col-auto">
+                            <label class="form-label" for="sarkozitelepules">Településnév</label>
+                            <input class="form-control" type="text" name="sarkozitelepules" id="sarkozitelepules" value="<?php  ?>"><br>
+                        </div>
+
+                        <div class=" col-auto">
+                            <label class="form-label" for="info">Információ</label>
+                            <input class="form-control" type="text" name="info" id="info" value="<?php  ?>"><br>
+                        </div>
+
+                        <div class=" col-auto">
+                            <label class="form-label" for="name">Szerző</label>
+                            <input class="form-control" type="text" name="name" id="name" value="<?php  ?>"><br>
+                        </div>
+
+
+                    </div>
+
+                    <div>
+                        <button class="btn btn-primary w-auto">Keresés/keresés törlése</button>
+                    </div>
+                </form>
 
             </div>
 
-            <div>
-                <button class="btn btn-primary w-auto">Keresés/keresés törlése</button>
-            </div>
-        </form>
+
+<div class="tablecity_table">
+
+
+            <div class="citytable mx-auto" style="max-width: 2000px;">
 
 
 
-        <div class="citytable mx-auto" style="max-width: 2000px;">
-
-
-
-            <table class=" table table-bordered mx-auto mt-4 text-center" , style="max-width: 2000px">
+                <table class=" table table-bordered mx-auto mt-4 text-center" , style="max-width: 2000px">
+                  
+                <div class="">
+ 
                 <thead>
 
+                        <th>
+                            id
+                        </th>
+                        <th>
+                            Település
+                        </th>
+                        <th>
+                            Információ
+                        </th>
+                        <th>
+                            Szerző
+                        </th>
 
-                    <th>
-                        id
-                    </th>
-                    <th>
-                        Település
-                    </th>
-                    <th>
-                        Információ
-                    </th>
-                    <th>
-                        Szerző
-                    </th>
+
+                    </thead>
+
+                    </div>
+                    <tbody>
+                        <?php foreach ($data["data"] as $sarkozitelepules) {  ?>
+                            <tr>
+
+                                <td>
+                                    <?php print $sarkozitelepules["id"] ?>
+
+                                </td>
+
+                                <td>
+                                    <?php {
+                                        print $sarkozitelepules["sarkozitelepules"];
+                                    } ?>
 
 
-                </thead>
-                <tbody>
-                    <?php foreach ($data as $sarkozitelepules) {  ?>
-                        <tr>
+                                </td>
 
-                            <td>
-                                <?php print $sarkozitelepules["id"] ?>
+                                <td>
+                                    <?php
 
-                            </td>
 
-                            <td>
-                                <?php {
-                                    print $sarkozitelepules["sarkozitelepules"];
+                                    print $sarkozitelepules["info"];
+
+
+
+                                    ?>
+                                    <?php if ($_SESSION["user"]["name"] === $sarkozitelepules["name"]) {
+
+
+                                    ?>
+                                        <form action="/sarkozinfo" method="post">
+                                            <input type="hidden" name="tid" value="<?php print $sarkozitelepules["id"] ?>">
+                                            <input type="text" name="ujinfo" value="<?php print $sarkozitelepules["info"] ?? "" ?>">
+                                            <button name="infomod">Módosítás</button>
+                                        </form>
+
+
+
+                                    <?php ;
+                                    } ?>
+
+
+
+
+
+
+                                </td>
+                                <td>
+                                    <?php
+
+                                    print $sarkozitelepules["name"];
+                                    ?>
+
+                                </td>
+                                </td>
+
+                                <?php
+                                if (($_SESSION["user"]["email"] === "admin@admin.hu") || $_SESSION["user"]["name"] === $sarkozitelepules["name"]) { ?>
+                                    <td>
+                                        <form action="/sarkozinfo" method="post">
+                                            <input type="hidden" name="idkeres" value="<?php print $sarkozitelepules["id"] ?>">
+                                            <button name=torles> Törlés</button>
+                                        </form>
+                                    </td>
+                                <?php ;
                                 } ?>
 
-
-                            </td>
-
-                            <td>
-                            <?php
-
-
-                           print $sarkozitelepules["info"];
-
-
-                           
-                         ?>
-                        <?php if($_SESSION["user"]["name"] === $sarkozitelepules["name"]){
-                        
-                        
-                        ?>
-                         <form action="/sarkozinfo" method="post">
-                                    <input type="hidden" name="tid" value="<?php print $sarkozitelepules["id"] ?>">
-                                    <input type="text" name="ujinfo" value ="<?php print $sarkozitelepules["info"] ?? "" ?>">
-                                    <button name="infomod">Módosítás</button>
-                                </form>
- 
-
-                            
-<?php ;} ?>
+                            </tr>
+                        <?php ;
+                        } ?>
+                    </tbody>
 
 
 
 
 
-
-                            </td>
-                            <td>
-                                <?php
-
-                                print $sarkozitelepules["name"];
-                                ?>
-
-                            </td>
- </td>
-
-                            <?php 
-                            if (($_SESSION["user"]["email"] === "admin@admin.hu") || $_SESSION["user"]["name"]=== $sarkozitelepules["name"]) { ?>
-                                <td>
-                                    <form action="/sarkozinfo" method="post">
-                                        <input type="hidden" name="idkeres" value="<?php print $sarkozitelepules["id"] ?>">
-                                        <button name=torles> Törlés</button>
-                                    </form>
-                                </td>
-                            <?php ;} ?>
-
-                        </tr>
-                        <?php ;} ?>
-                </tbody>
+                </table>
 
 
 
-
-
-            </table>
-
+            </div>
 
 
         </div>
+
 
 
     </div>

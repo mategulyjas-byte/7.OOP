@@ -17,6 +17,9 @@ class TableController
 
         $table = new User($connection);
 
+        $title="Adatmódosítása";
+
+    
 
 
         $data = ($table->select(["id", "name", "email", "password"]));
@@ -44,6 +47,6 @@ class TableController
 
         $data = $table->selectösszegzes();
 
-        $this->show("table", $data);
+        $this->show("table", $data, compact("title"));
     }
 }
