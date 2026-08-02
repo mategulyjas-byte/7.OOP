@@ -95,14 +95,14 @@ include __DIR__ . "/../includes/head.php" ?>
 
                 <form action="/sarkoz" method="post"  >
 
-            <div class="sarkoz_velemenybevitel">
+            <div class="sarkoz_velemenybevitel mb-5">
 
                         <label class="form-label" for="info">Irja ide véleményét a településről: </label>
                         <input type="hidden" name="sarkozitelepules" id="" value="<?php print $_SESSION["sarkozitelepules"] ?? "" ?>">
                         <input type="hidden" name=name value="<?php print $_SESSION["user"]["name"] ?? "" ?>">
-                        <textarea class="form-control w-100 "rows="11" name="info" id="info"> </textarea>
+                        <textarea class="form-control w-100 "rows="6" name="info" id="info"> </textarea>
                         <input type="hidden" name=nameid value="<?php print $_SESSION["user"]["id"] ?>">
-                        <button name="infoad" class="btn btn-primary mt-4">Infromáció hozáadása</button>
+                        <button name="infoad" class="btn btn-primary mt-4">Információ hozáadása</button>
 
                     </div>
 

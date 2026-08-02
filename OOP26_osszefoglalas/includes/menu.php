@@ -1,7 +1,9 @@
 
+
 <div class="m1">
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container " style="max-width: 800px;">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top ">
+  <div class="container " style="max-width: 1200px;">
     <a class="navbar-brand" href="#">Menü</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -73,6 +75,11 @@
           <a class="nav-link" href="/vote">Szavazás</a>
         </li>
 
+         <!-- <li class="nav-item">
+          <a class="nav-link" id="szamlalo" href=""></a>
+
+        </li> -->
+
 <?php ;} ?>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,17 +94,12 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+      </ul> 
+
+   
 
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-
+    
 
       
     </div>
@@ -105,4 +107,20 @@
 </nav>
 
 
+ <?php if(isset($_SESSION["user"]["id"])){  ?>
+
+
+<div  
+style=" display:flex; ; justify-content:space-around; ; flex-direction:column;  font-family:monospace; font-size: 70%;  ">
+
+<div style="text-align:center" id="ora"></div>
+
+<div  style="text-align:center" id="szamlalo"></div>
+
+
 </div>
+<?php ;} ?> 
+
+
+</div>
+

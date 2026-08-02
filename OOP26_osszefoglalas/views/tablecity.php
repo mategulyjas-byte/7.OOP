@@ -24,7 +24,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
                 <form action="/tablecity" method="post">
                     
-                    <div style="display:flex ; justify-content:center; ">
+                    <div style="display:flex ; justify-content:center ">
 
                         <div class="col-auto">
                             <label class="form-label" for="tid">Azonosító</label>
@@ -75,7 +75,7 @@ include __DIR__ . "/../includes/head.php" ?>
                     </div>
 
                     <div>
-                        <button class="btn btn-primary w-auto ">Keresés/keresés törlése</button>
+                        <button class="btn-primary w-auto ">Keresés/keresés törlése</button>
                     </div>
                 </form>
 

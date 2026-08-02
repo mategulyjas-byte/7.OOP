@@ -25,7 +25,7 @@ include __DIR__ . "/../includes/head.php" ?>
 
 
 
-                <form action="/table" method="POST" class="mt-4">
+                <form action="/table"  method="POST" class="mt-4">
                     <label class="form-label" for="keres">Névre keresés:</label>
                     <input class="form-control" type="text" name="keres" id="keres">
                     <button class="btn btn-primary w-auto" s type="submit">Keres/keresés törlése</button>
