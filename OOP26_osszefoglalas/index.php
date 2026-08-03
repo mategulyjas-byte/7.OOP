@@ -39,15 +39,26 @@ $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);      //Egy változót k
 
 switch ($url) {
     case '/':                               //Ha nincs beütött cím akkor homepage oldalra irányít ( a korábban már létrehozott Pagecontroller class ben definiált (a fentebbi use PageControlllerer behyvtam az adott classt majd $pagecontroller new PageControllere -er példányosította, és így tudtam használni a benne lévő jelen esetben homepage () funkciót aminek a használatával megkelenítem a View -be lévő homepage.php oldalt)
-        $pagecontroller->homepage();    
+        $pagecontroller->homepage();      // a példányosított pagecontrollerből meghívom a homepage functiont ez a funtion jelen esetben a PageControlelr.php -ban lett definiálva.
         break;
 
-    case '/about':
-        $pagecontroller->about();
+    case '/about':                          // Ha a /aboutot beütöm címnek azkkor 
+        $pagecontroller->about();           // a  példányosított pagecontrollerből meghívja az about functiont
         break;
 
 
-    case '/account':
+ case '/register':                                      // Ha a /regisztert beütöm akkor:
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {          // ha GET-es a kérés akkor simán csak megjeleníti a register oldalt.- ezt
+            $guestcontroller->register();
+        } else {
+            $guestcontroller->registerprocess($connection);
+        }
+        break;
+
+
+
+
+    case '/account':                                        
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
             $usercontroller->account();
         } else {
@@ -55,11 +66,9 @@ switch ($url) {
         }
         break;
 
-
     case '/profile':
         $pagecontroller->profile();
         break;
-
 
     case '/logout':
         $logoutcontroller->logout();
@@ -73,19 +82,11 @@ switch ($url) {
         }
         break;
 
-    case '/register':
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            $guestcontroller->register();
-        } else {
-            $guestcontroller->registerprocess($connection);
-        }
-
-        break;
+   
 
     case '/table':
         $tablecontroller->table($connection);
         break;
-
 
     case '/tablecity':
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -95,7 +96,6 @@ switch ($url) {
         }
         break;
 
-
     case '/sarkoz':
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $sarkozcontroller->sarkozprocess($connection);
@@ -103,27 +103,23 @@ switch ($url) {
             $sarkozcontroller->sarkoz($connection);
         }
         break;
-    case '/sarkozinfo':
 
+    case '/sarkozinfo':
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $sarkozinfocontroller->sarkozinfoprocess($connection);
         } else {
             $sarkozinfocontroller->sarkozinfo($connection);
         }
-
         break;
 
-
-
     case '/vote':
-
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $votecontroller->voteprocess($connection);
         } else {
             $votecontroller->vote($connection);
         }
-
         break;
+
     default:
         http_response_code(400);
         break;

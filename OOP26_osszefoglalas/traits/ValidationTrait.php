@@ -2,15 +2,15 @@
 
 namespace traits;
 
-trait ValidationTrait
+trait ValidationTrait                                               //elékszítem azokat az univerzális functionokat, melyek pl egy validáláshoz szükségesek.
 {
-    function ValidLength($key, $min, $max, $message)
+    function ValidLength($key, $min, $max, $message)                          // hosszt viszgálom  ()
     {
-        $length = mb_strlen(trim($_POST[$key]));
-        if ($length < $min || $length > $max) {
-            $_SESSION["flash"]["errors"][] = sprintf($message, $min, $max);
+        $length = mb_strlen(trim($_POST[$key]));                            // hosz= trimmelt post key
+        if ($length < $min || $length > $max) {                             // ha a hosssz kisebb mint mi n vagy nagyobb mint max akkor
+            $_SESSION["flash"]["errors"][] = sprintf($message, $min, $max);         // sprintf el hibaüzenetet készítek ( a beírt értéket aadja vissza-- sablonszövegbe (formátumstringbe) változókat és értékeket illeszt be)
         }
-        return $this;
+        return $this;                                               // return $this- hogy a functionok egymásból hívhatóak legyenek
     }
 
     function ValidEmail($key, $message)
@@ -28,6 +28,4 @@ trait ValidationTrait
         }
         return $this;
     }
-
-   
 }
