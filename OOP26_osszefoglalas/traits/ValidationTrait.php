@@ -13,19 +13,19 @@ trait ValidationTrait                                               //elékszít
         return $this;                                               // return $this- hogy a functionok egymásból hívhatóak legyenek
     }
 
-    function ValidEmail($key, $message)
+    function ValidEmail($key, $message)                                 // email validálása
     {
-        if (!filter_var($_POST[$key], FILTER_VALIDATE_EMAIL)) {
-            $_SESSION["flash"]["errors"][] = $message;
+        if (!filter_var($_POST[$key], FILTER_VALIDATE_EMAIL)) {         // filtervalidate email- beépített
+            $_SESSION["flash"]["errors"][] = $message;                  // ha invalid a akkor a session errorsba üzenet
         }
         return $this;
     }
 
-    function Compare($key1, $key2, $message)
-    {
+    function Compare($key1, $key2, $message)                            // jelszavak összehhasonlítása
+    {                                                                   
         if ($_POST[$key1] != $_POST[$key2]) {
-            $_SESSION["flash"]["errors"][] = $message;
+            $_SESSION["flash"]["errors"][] = $message;                  // ha nem azonos, akkor session erros ba üzenet
         }
-        return $this;
-    }
+        return $this;                                                     
+    }               
 }

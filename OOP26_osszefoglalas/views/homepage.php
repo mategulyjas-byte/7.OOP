@@ -1,4 +1,7 @@
-<?php defined('ENTRY') || (http_response_code(404) && exit); ?>
+<?php defined('ENTRY') || (http_response_code(404) && exit); 
+
+setcookie("cooke", "aktív", time()+(60));
+?>
 
 <!DOCTYPE html>
 <?php

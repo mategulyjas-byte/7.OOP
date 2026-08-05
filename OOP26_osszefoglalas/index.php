@@ -8,6 +8,9 @@ spl_autoload_register(function ($file2) {         // az spl_autoload register ar
     include __DIR__ . "/$file2.php";
 });
 
+
+
+
 $connection = mysqli_connect("localhost", "root", "", "gulyas_mate");    // adatbázis kapcsolaot elindítom- ezeket passzolom majd tovább
 
 use controllers\DataModificationController;              //  megmondom melyik mappában (névtérben) van az adott osztály osztályokat, így lentebb a kódban már nem kell mindenhova kiírni a teljes controllers\ útvonalat.

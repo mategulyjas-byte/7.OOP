@@ -1,8 +1,8 @@
-<?php defined('ENTRY') || (http_response_code(404) && exit); ?>
+<?php defined('ENTRY') || (http_response_code(404) && exit);  ?>
 
 <!DOCTYPE html>
 
-<?php
+<?php                                                                   // a fentebbi define - arra jó hogyha csakakkro engedi megnnyitni a honlapot ha a kérés az index.php n keresztül érkezik ellenkező esetben (define- includes miatt hiabüzenetet ír)
 
 include __DIR__ . "/../includes/head.php" ?>
 
@@ -12,15 +12,15 @@ include __DIR__ . "/../includes/head.php" ?>
     <div class="hp_egeszoldal">
 
 
-<div class="hp_oldalkiscim">Regisztráció</div>
+        <div class="hp_oldalkiscim">Regisztráció</div>
 
         <div class="container mx-auto text-center gap-3 mt-2 !important" style="max-width: 900px;">
             <form action="/register" method="post" novalidate>
 
-                <h2  class="hp_nagycim"  >Regiszrációs űrlap</h2>
+                <h2 class="hp_nagycim">Regiszrációs űrlap</h2>
 
                 <div class="container text-start mt-4" style="max-width: 500px; ">
-                    <?php
+                    <?php                                                                                       // alerteket elkészítem
                     if (isset($_SESSION["flash"]["errors"])) {
                         print "<div class='alert alert-danger'>";
                         print "<ul>";
@@ -41,7 +41,8 @@ include __DIR__ . "/../includes/head.php" ?>
                 </div>
 
 
-
+<!-- inputmezőket elkékészítem
+ mivel aszt akarom hogy megtartasa a beírt rossz értéket, ezért a value be beírom a post adatokat (GuestControllereb helyeztesm $Post= $_Session ["flash"]["inputs"]), de őgy hogy azt get kéréssel majd meg tudjam semmisíteni -->
                 <div class="container mx-auto row col-6 mt-4">
                     <label for="name">Név</label>
                     <input type="text" name="name" id="name" class="form-control" placeholder="Add meg a neved"

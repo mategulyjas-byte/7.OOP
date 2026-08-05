@@ -13,7 +13,7 @@ class GuestController
 
 
     function register()
-    {                        // simán Get-es kérésre csak a honrgister lapot mutatja, a show függvénynnek, melyet a ViewTrait ből emelte be  nem csak e filet hanem adatokat is átadok, jelen esetben ez az adat a Title
+    {                                                    // simán Get-es kérésre csak a register lapot mutatja, a show függvénynnek, melyet a ViewTrait ből emelte be  nem csak e filet hanem adatokat is átadok, jelen esetben ez az adat a Title
         $title = "Regisztráció";
 
         $this->show("/register", compact("title"));
@@ -36,9 +36,6 @@ class GuestController
         $user = new User($connection);                                                      // példányosítom a User modellt, mert ide mentem el a beérkezendő adatokat
 
         $emailszam = $user->select(["id"])->where("email", "=", $_POST["email"])->selectösszegzesfirst();   // Megvizsgálom e bevivendő emilcímet- van e már a rendzserben, más felhazsnáló regisztárlt e már azzal korábban
-
-
-
         if ($emailszam != null) {                                                               // ha az emailszám nem 0  vagyis jelen esetben dob vissza pl 1db  id-t akkor
             $_SESSION["flash"]["errors"][] = "Válaszzon másik e-mail címet";                // a sessionba hibaüzenetet teszek
         }
@@ -46,11 +43,9 @@ class GuestController
 
 
         if (empty($_SESSION["flash"]["errors"])) {                  // Ha üres az errors akkor
-
             $user = new User($connection);                          // példányostom ismét a User táblát
-
+           
             $user->insert(["name", "email", "password"]);           // mivel korábban már validálva lettek a név, jelszó  stb  illetve nincs email egyezés és a hiba tárló üres ezért a psot adatokat beviszem a táblázatba
-
             $_SESSION["flash"]["success"] = "Siekres Regisztráció";   // Session flash- be elhelyezem a sikeres regisztrációról az üzenetet
         }
 
