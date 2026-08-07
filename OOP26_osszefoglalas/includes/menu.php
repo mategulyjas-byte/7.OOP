@@ -107,7 +107,6 @@
 </nav>
 
 
- <?php if(isset($_SESSION["user"]["id"])){  ?>
 
 
 <div  
@@ -115,11 +114,17 @@ style=" display:flex; ; justify-content:space-around; ; flex-direction:column;  
 
 <div style="text-align:center" id="ora"></div>
 
+ <?php if(isset($_SESSION["user"]["id"])){  ?>
+
 <div  style="text-align:center" id="szamlalo"></div>
+
+<?php ;} ?> 
+
+<div  style="text-align:center"> <?php print "Látogatók száma: " . $_SESSION["latogatok"]  ?> </div>
+
 
 
 </div>
-<?php ;} ?> 
 
 
 </div>

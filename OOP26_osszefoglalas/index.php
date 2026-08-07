@@ -23,6 +23,7 @@ use controllers\TableCityController;
 use controllers\SarkozController;
 use controllers\SarkozInfoController;
 use controllers\VoteController;
+use controllers\VisitController;
 
 $pagecontroller = new PageController;                 // példányosítom az adott osztályt (class) annak érdekében, hogy használhassam
 $guestcontroller = new GuestController;
@@ -34,14 +35,22 @@ $tablecitycontroller = new TableCityController;
 $sarkozcontroller = new SarkozController;
 $sarkozinfocontroller = new SarkozInfoController;
 $votecontroller = new VoteController;
+$visitcontroller = new VisitController;
 
 //$url = $_SERVER["REQUEST_URI"];
 
 $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);      //Egy változót készítek, mely az útvonal- a böngészőbe beütött címek/aloldalak jelöli- ez a változó alább a case ben meghatározot értékeket (/register/about) veheti fel, illetva ha ezek közül egyiket sem, akkor egy default értéket ,ely pl hiba kíírásra jó Ez a sor arra jó, hogy letisztítsa a weboldal címét (URL), és csak a tényleges útvonalat tartsa meg,
 
+$_SESSION["url"]=$url;
+$visitcontroller->szamlalo($connection);
+
 
 switch ($url) {
-    case '/':                               //Ha nincs beütött cím akkor homepage oldalra irányít ( a korábban már létrehozott Pagecontroller class ben definiált (a fentebbi use PageControlllerer behyvtam az adott classt majd $pagecontroller new PageControllere -er példányosította, és így tudtam használni a benne lévő jelen esetben homepage () funkciót aminek a használatával megkelenítem a View -be lévő homepage.php oldalt)
+    case '/':
+             
+        setcookie("szamlalo", "aktív", time()+19);
+
+        //Ha nincs beütött cím akkor homepage oldalra irányít ( a korábban már létrehozott Pagecontroller class ben definiált (a fentebbi use PageControlllerer behyvtam az adott classt majd $pagecontroller new PageControllere -er példányosította, és így tudtam használni a benne lévő jelen esetben homepage () funkciót aminek a használatával megkelenítem a View -be lévő homepage.php oldalt)
         $pagecontroller->homepage();      // a példányosított pagecontrollerből meghívom a homepage functiont ez a funtion jelen esetben a PageControlelr.php -ban lett definiálva.
         break;
 
@@ -50,7 +59,9 @@ switch ($url) {
         break;
 
 
- case '/register':                                      // Ha a /regisztert beütöm akkor:
+ case '/register':  
+                               // Ha a /regisztert beütöm akkor:
+
         if ($_SERVER["REQUEST_METHOD"] == "GET") {          // ha GET-es a kérés akkor simán csak megjeleníti a register oldalt.- ezt
             $guestcontroller->register();
         } else {
@@ -61,7 +72,8 @@ switch ($url) {
 
 
 
-    case '/account':                                        
+    case '/account': 
+                                       
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
             $usercontroller->account();
         } else {
@@ -70,14 +82,17 @@ switch ($url) {
         break;
 
     case '/profile':
+
         $pagecontroller->profile();
         break;
 
     case '/logout':
+
         $logoutcontroller->logout();
         break;
 
     case '/datamodification':
+
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
             $datamodificationcontroller->datamodification($connection);
         } else {
@@ -88,10 +103,12 @@ switch ($url) {
    
 
     case '/table':
+
         $tablecontroller->table($connection);
         break;
 
     case '/tablecity':
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $tablecitycontroller->tablecityprocess($connection);
         } else {
@@ -100,6 +117,7 @@ switch ($url) {
         break;
 
     case '/sarkoz':
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $sarkozcontroller->sarkozprocess($connection);
         } else {
@@ -108,6 +126,7 @@ switch ($url) {
         break;
 
     case '/sarkozinfo':
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $sarkozinfocontroller->sarkozinfoprocess($connection);
         } else {
@@ -116,6 +135,7 @@ switch ($url) {
         break;
 
     case '/vote':
+
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $votecontroller->voteprocess($connection);
         } else {
