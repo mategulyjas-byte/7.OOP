@@ -30,5 +30,11 @@ class PageController
     }
 
 
+    function calculate(){
+
+    $title="Számológép";
+    $this->show("calculate", compact("title"));
+    }
+
 }
 

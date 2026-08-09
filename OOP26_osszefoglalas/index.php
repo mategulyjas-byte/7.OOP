@@ -143,6 +143,11 @@ switch ($url) {
         }
         break;
 
+
+    case '/calculate':
+        $pagecontroller->calculate();
+        break;    
+
     default:
         http_response_code(400);
         break;

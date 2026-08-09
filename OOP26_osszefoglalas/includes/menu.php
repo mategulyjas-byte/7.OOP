@@ -75,6 +75,12 @@
           <a class="nav-link" href="/vote">Szavazás</a>
         </li>
 
+
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/calculate">Számológép</a>
+        </li>
+
          <!-- <li class="nav-item">
           <a class="nav-link" id="szamlalo" href=""></a>
 
