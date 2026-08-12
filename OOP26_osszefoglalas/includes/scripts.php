@@ -52,32 +52,66 @@
 
 
     <script>
-        var gombokertekek = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "c", "*", "/", "+", "-", "="];
+        var ertekek = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "c", "*", "/", "+", "-", "="];
 
-        var gombtarto = document.getElementsByClassName("gombtarto")[0]
+        var buttonsholder = document.getElementsByClassName("buttonsholder")[0]
+        var kijelzo = document.getElementsByClassName("kijelzo")[0]
 
-        gombokertekek.forEach(function(egygomb) {
-            gombtarto.innerHTML += "<button>" + egygomb + "</button>"
+
+        ertekek.forEach(function(ertek) {
+            buttonsholder.innerHTML += "<button>" + ertek + "</button>"
         });
 
-
-
-        var gombok = document.querySelectorAll(".gombtarto button")
-
-        var kijelzo = document.querySelector(".kijelzo")
-
+        var gombok = document.querySelectorAll(".buttonsholder button")
 
         gombok.forEach(function(egygomb) {
-            egygomb.onmousedown = function() {
-                egygomb.style.color = "black"
-            };
-            egygomb.onmouseup = function() {
-                egygomb.style.color = "white"
-            };
+            egygomb.onclick = function() {
 
-         egygomb.onclick=function(){kijelzo.value += egygomb.innerHTML}
+
+
+                if (egygomb.innerHTML == "c") {
+                    //kijelzo.value = ""
+                    // törlés()
+
+                    hozzaad("", false)
+                } else if (egygomb.innerHTML == "=") {
+                    calculate()
+
+                    // try {
+                    //     eredmeny = eval(kijelzo.value), kijelzo.value = eredmeny
+                    // } catch {
+                    //     alert("Hibás adatokat írt be \n" + kijelzo.value + "Kérem próbálja meg ismét"), kijelzo.value = ""
+                    // }
+                } else {
+
+
+                    //kijelzo.value += egygomb.innerHTML
+                    hozzaad(egygomb.innerHTML)
+
+                }
+
+            }
         })
 
+        //function törlés()
+        //{ kijelzo.value =""}
 
-    
+        function hozzaad(value, feluliras = true) {
+            if (feluliras) {
+                kijelzo.value += value
+            } else {
+                kijelzo.value = value
+            }
+        }
+
+
+        function calculate(){
+
+   try {
+                        eredmeny = eval(kijelzo.value), hozzaad(eredmeny, false)
+                    } catch {
+                        alert("Hibás adatokat írt be \n" + kijelzo.value + "Kérem próbálja meg ismét");  hozzaad(" ", false)
+                    }
+
+        }
     </script>

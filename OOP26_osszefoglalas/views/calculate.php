@@ -21,7 +21,8 @@ include __DIR__ . "/../includes/head.php" ?>
 
             <input type="text"  class="kijelzo">
 
-            <div class=" gombtarto"></div>
+
+            <div class="buttonsholder"></div>
 
         </div>
 
