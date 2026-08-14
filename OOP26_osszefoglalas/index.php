@@ -11,7 +11,40 @@ spl_autoload_register(function ($file2) {         // az spl_autoload register ar
 
 
 
-$connection = mysqli_connect("localhost", "root", "", "gulyas_mate");    // adatbázis kapcsolaot elindítom- ezeket passzolom majd tovább
+
+// --- HIBAKERESÉS BEKAPCSOLÁSA ---
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// --- ADATBÁZIS ELLENŐRZŐ BLOKK ---
+mysqli_report(MYSQLI_REPORT_OFF); // Kikapcsoljuk az automatikus összeomlást
+$test_connection = @mysqli_connect("localhost", "mate", "Jawa207210", "mate");
+if (!$test_connection) {
+    die("<div style='padding:25px; background:#f8d7da; color:#721c24; font-family:sans-serif; border:2px solid #f5c6cb; border-radius:5px; margin:20px;'>
+            <h3 style='margin-top:0;'>Adatbázis kapcsolódási hiba!</h3>
+            <p>A weboldal azért nem működik, mert a PHP nem tud csatlakozni a MySQL-hez.</p>
+            <p><strong>A kiszolgáló válasza:</strong> " . mysqli_connect_error() . " (Kód: " . mysqli_connect_errno() . ")</p>
+            <p><em>Tipp: Ha a hiba 'Access denied' vagy 'Connection refused', akkor a Nethely megváltoztatta a hozzáférést, vagy nem a 'localhost' a helyes szervernév!</em></p>
+         </div>");
+}
+mysqli_close($test_connection);
+
+
+
+
+
+
+
+
+
+
+
+
+
+$connection = mysqli_connect("localhost", "mate", "Jawa207210", "mate"); 
+
+//$connection = mysqli_connect("localhost", "root", "", "gulyas_mate");    // adatbázis kapcsolaot elindítom- ezeket passzolom majd tovább
 
 use controllers\DataModificationController;              //  megmondom melyik mappában (névtérben) van az adott osztály osztályokat, így lentebb a kódban már nem kell mindenhova kiírni a teljes controllers\ útvonalat.
 use controllers\PageController;
@@ -42,6 +75,7 @@ $visitcontroller = new VisitController;
 $url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);      //Egy változót készítek, mely az útvonal- a böngészőbe beütött címek/aloldalak jelöli- ez a változó alább a case ben meghatározot értékeket (/register/about) veheti fel, illetva ha ezek közül egyiket sem, akkor egy default értéket ,ely pl hiba kíírásra jó Ez a sor arra jó, hogy letisztítsa a weboldal címét (URL), és csak a tényleges útvonalat tartsa meg,
 
 $_SESSION["url"]=$url;
+
 $visitcontroller->szamlalo($connection);
 
 
