@@ -28,6 +28,11 @@
           <a class="nav-link" href="/account">Belépés</a>
         </li>
 
+
+        <li class="nav-item">
+          <a class="nav-link" href="/forgott">Elfelejtett jelszó</a>
+        </li>
+
 <?php ;} else{?>
 
 

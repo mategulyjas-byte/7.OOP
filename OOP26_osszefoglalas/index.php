@@ -10,38 +10,6 @@ spl_autoload_register(function ($file2) {         // az spl_autoload register ar
 
 
 
-
-
-// --- HIBAKERESÉS BEKAPCSOLÁSA ---
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-// --- ADATBÁZIS ELLENŐRZŐ BLOKK ---
-mysqli_report(MYSQLI_REPORT_OFF); // Kikapcsoljuk az automatikus összeomlást
-$test_connection = @mysqli_connect("localhost", "mate", "Jawa207210", "mate");
-if (!$test_connection) {
-    die("<div style='padding:25px; background:#f8d7da; color:#721c24; font-family:sans-serif; border:2px solid #f5c6cb; border-radius:5px; margin:20px;'>
-            <h3 style='margin-top:0;'>Adatbázis kapcsolódási hiba!</h3>
-            <p>A weboldal azért nem működik, mert a PHP nem tud csatlakozni a MySQL-hez.</p>
-            <p><strong>A kiszolgáló válasza:</strong> " . mysqli_connect_error() . " (Kód: " . mysqli_connect_errno() . ")</p>
-            <p><em>Tipp: Ha a hiba 'Access denied' vagy 'Connection refused', akkor a Nethely megváltoztatta a hozzáférést, vagy nem a 'localhost' a helyes szervernév!</em></p>
-         </div>");
-}
-mysqli_close($test_connection);
-
-
-
-
-
-
-
-
-
-
-
-
-
 $connection = mysqli_connect("localhost", "mate", "Jawa207210", "mate"); 
 
 //$connection = mysqli_connect("localhost", "root", "", "gulyas_mate");    // adatbázis kapcsolaot elindítom- ezeket passzolom majd tovább
@@ -57,6 +25,7 @@ use controllers\SarkozController;
 use controllers\SarkozInfoController;
 use controllers\VoteController;
 use controllers\VisitController;
+use controllers\ForgottController;
 
 $pagecontroller = new PageController;                 // példányosítom az adott osztályt (class) annak érdekében, hogy használhassam
 $guestcontroller = new GuestController;
@@ -69,6 +38,7 @@ $sarkozcontroller = new SarkozController;
 $sarkozinfocontroller = new SarkozInfoController;
 $votecontroller = new VoteController;
 $visitcontroller = new VisitController;
+$forgottcontroller= new ForgottController;
 
 //$url = $_SERVER["REQUEST_URI"];
 
@@ -102,6 +72,22 @@ switch ($url) {
             $guestcontroller->registerprocess($connection);
         }
         break;
+
+
+
+
+ case '/forgott':  
+                               // Ha a /regisztert beütöm akkor:
+
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {          // ha GET-es a kérés akkor simán csak megjeleníti a register oldalt.- ezt
+            $forgottcontroller->forgott();
+        } else {
+            $forgottcontroller->forgottprocess($connection);
+        }
+        break;
+
+
+
 
 
 

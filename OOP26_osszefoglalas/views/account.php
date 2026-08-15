@@ -65,8 +65,7 @@ include __DIR__ . "/../includes/head.php" ?>
     </div>
 
 
-
-
+<a class="a1" href="/forgott">Kattintson ide ha elfelejtette a jelszavát</a>
 
 </div>
 

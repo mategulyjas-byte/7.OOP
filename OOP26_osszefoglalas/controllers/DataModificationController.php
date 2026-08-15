@@ -46,7 +46,7 @@ class DataModificationController
         
         if (empty($_SESSION["flash"]["errors"])) {
 
-            $user->update()->ertekek2("name", $_POST["name"])->ertekek2("email", $_POST["email"])->ertekek2("password", $_POST["password"])->whereupdate("id", "=", $_SESSION["user"]["id"])->updateosszegzes();
+            $user->update()->ertekek2("name", $_POST["name"])->ertekek2("email", $_POST["email"])->ertekek2("password", $_POST["password"])->ertekek2("passwordtime", "")->whereupdate("id", "=", $_SESSION["user"]["id"])->updateosszegzes();
 //
 
 
@@ -67,7 +67,7 @@ $sarkozinfo = new SarkozInfo($connection);
             $_SESSION["user"]["password"] = $_POST["password"];
 
 
-
+$_SESSION["flash"]["success"]="sikeres adatmódosítás";
 
             header("location:/datamodification");
             exit;
