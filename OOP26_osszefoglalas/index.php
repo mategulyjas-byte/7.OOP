@@ -26,6 +26,7 @@ use controllers\SarkozInfoController;
 use controllers\VoteController;
 use controllers\VisitController;
 use controllers\ForgottController;
+use controllers\GroupMessageController;
 
 $pagecontroller = new PageController;                 // példányosítom az adott osztályt (class) annak érdekében, hogy használhassam
 $guestcontroller = new GuestController;
@@ -39,6 +40,7 @@ $sarkozinfocontroller = new SarkozInfoController;
 $votecontroller = new VoteController;
 $visitcontroller = new VisitController;
 $forgottcontroller= new ForgottController;
+$groupmessagecontroller= new GroupMessageController;
 
 //$url = $_SERVER["REQUEST_URI"];
 
@@ -52,7 +54,7 @@ $visitcontroller->szamlalo($connection);
 switch ($url) {
     case '/':
              
-        setcookie("szamlalo", "aktív", time()+19);
+        setcookie("szamlalo", "aktív", time()+3600);
 
         //Ha nincs beütött cím akkor homepage oldalra irányít ( a korábban már létrehozott Pagecontroller class ben definiált (a fentebbi use PageControlllerer behyvtam az adott classt majd $pagecontroller new PageControllere -er példányosította, és így tudtam használni a benne lévő jelen esetben homepage () funkciót aminek a használatával megkelenítem a View -be lévő homepage.php oldalt)
         $pagecontroller->homepage();      // a példányosított pagecontrollerből meghívom a homepage functiont ez a funtion jelen esetben a PageControlelr.php -ban lett definiálva.
@@ -87,6 +89,17 @@ switch ($url) {
         break;
 
 
+
+
+         case '/groupmessage':  
+                               // Ha a /regisztert beütöm akkor:
+
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {          // ha GET-es a kérés akkor simán csak megjeleníti a register oldalt.- ezt
+            $groupmessagecontroller->groupmessage();
+        } else {
+            $groupmessagecontroller->groupmessageprocess($connection);
+        }
+        break;
 
 
 

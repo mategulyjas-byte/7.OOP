@@ -35,7 +35,7 @@ $userdata=$user->select(["id","name","email", "password", "passwordtime"])->wher
 
 if($userdata !== null && (password_verify($_POST["password"],$userdata["password"] ) == true) 
     
- && (!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0)   && (($userdata["passwordtime"] == "0000-00-00 00:00:00" ) || ($userdata["passwordtime"] > date('Y-m-d H:i:s'))  )    )   {  $_SESSION["user"]=$userdata;
+ && (!isset ($_SESSION["flash"]["errors"]) || count($_SESSION["flash"]["errors"])==0)   && (($userdata["passwordtime"] == "0000-00-00 00:00:00" ) || ($userdata["passwordtime"] > date('Y-m-d H:i:s')) || $userdata["passwordtime"] == NULL )    )   {  $_SESSION["user"]=$userdata;
 
 
 

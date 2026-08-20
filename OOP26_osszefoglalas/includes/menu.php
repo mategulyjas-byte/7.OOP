@@ -33,6 +33,8 @@
           <a class="nav-link" href="/forgott">Elfelejtett jelszó</a>
         </li>
 
+
+
 <?php ;} else{?>
 
 
@@ -56,6 +58,16 @@
           <a class="nav-link" href="/table">Táblázat</a>
         </li>
 <?php ;} ?>
+
+
+<?php  if(( $_SESSION["user"]["email"] === "admin@admin.hu")) {?>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/groupmessage"> Csoportos e-mail küldés</a>
+        </li>
+
+<?php ;} ?>
+
 
 
 
@@ -85,6 +97,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/calculate">Számológép</a>
         </li>
+
+
+
+        
 
          <!-- <li class="nav-item">
           <a class="nav-link" id="szamlalo" href=""></a>
