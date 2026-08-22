@@ -1,0 +1,104 @@
+body {
+    padding: 2px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav>img:first-of-type {
+    max-height: 160px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    margin: -60px 10px 0px 10px;
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #c33;
+    font-weight: bold;
+    font-size: larger;
+}
+
+nav>a>img {
+    max-height: 70px;
+    align-items: center;
+    border-radius: 20%;
+
+}
+
+main{
+    display: flex; flex-direction: column;
+}
+main>section:first-of-type {
+    background-image: url("img/borító.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 300px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+
+}
+
+main>section:first-of-type  h1
+{
+    text-transform: uppercase;
+    color: #c33;;
+    font-family: sans-serif;
+}
+
+main>section:first-of-type  h3,
+
+section:nth-of-type(2) > div:first-of-type h3
+{
+    color: #c33;
+    font-family: "Over the Rainbow";
+}
+
+main>section:first-of-type a, main> section:nth-of-type(2) > div:nth-of-type(2) > div > a {
+    background-color: #c33;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+}
+
+.material-symbols-outlined{font-size: smaller;}
+
+main>section:first-of-type >div{ margin-top:40px; margin-left: 30px;}
+
+main>section:first-of-type h1,h3,a{ margin:0px}
+
+
+
+section:nth-of-type(2){
+    background-color: #c33;
+  
+}
+
+section:nth-of-type(2) > div:first-of-type{display: flex; flex-direction: column; align-items: center;}
+
+section:nth-of-type(2) > div:first-of-type h2, section:nth-of-type(2) > div:first-of-type h3{color: white;}
+
+section:nth-of-type(2) > div:nth-of-type(2){display: flex;  }
+
+section:nth-of-type(2) > div:nth-of-type(2) > div{margin: 10px; display: flex;  align-items:center; flex-direction: column; color:white, 
+ }
+
+
+section:nth-of-type(2) img{max-width: 100%;}
+
+
+section:nth-of-type(2) > div:nth-of-type(2) > div >a{ text-decoration: none; color: #c33 !important; background-color: white !important; padding: 16px 40px 16px 40px !important;}
