@@ -159,7 +159,7 @@
 
 
 
-<br><br><br>
+    <br><br><br>
 
 
 
@@ -189,24 +189,22 @@
 
     </table>
 
+    <br><br><br>
+
+    <table class="tablejs" style=" border:2px solid black ; border-collapse: collapse;   max-width:fit-content; margin: 0 auto;  ">
 
 
+    </table>
 
+    <script>
+        let tablazat = ""
 
+        for (i = 1; i < 9; i++) {
+            tablazat += "<tr> <td></td>  <td></td> <td> </td>  <td></td>  <td></td> <td> </td>  <td></td>  <td></td> </tr>"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+        document.querySelector(".tablejs").innerHTML = tablazat
+    </script>
 
 
 
