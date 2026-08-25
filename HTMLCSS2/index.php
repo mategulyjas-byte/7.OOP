@@ -214,7 +214,6 @@ let tablejs2= document.querySelector(".tablejs2");
 
 let tartalom="";
 
-
 for( let f=1; f<8; f++){
 
 tartalom += "<tr  style='border:2px solid black; ' >";
