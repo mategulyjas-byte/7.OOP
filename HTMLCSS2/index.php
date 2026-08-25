@@ -192,18 +192,54 @@
     <br><br><br>
 
     <table class="tablejs" style=" border:2px solid black ; border-collapse: collapse;   max-width:fit-content; margin: 0 auto;  ">
-
-
     </table>
 
+
+<table class="tablejs2" style="margin:0 auto; border:2px solid black; border-collapse:collapse"></table>
+
+
     <script>
-        let tablazat = ""
+        // let tablazat = ""
 
-        for (i = 1; i < 9; i++) {
-            tablazat += "<tr> <td></td>  <td></td> <td> </td>  <td></td>  <td></td> <td> </td>  <td></td>  <td></td> </tr>"
+        // for (i = 1; i < 9; i++) {
+        //     tablazat += "<tr> <td></td>  <td></td> <td> </td>  <td></td>  <td></td> <td> </td>  <td></td>  <td></td> </tr>"
 
-        }
-        document.querySelector(".tablejs").innerHTML = tablazat
+        // }
+        // document.querySelector(".tablejs").innerHTML = tablazat
+
+
+
+
+let tablejs2= document.querySelector(".tablejs2");
+
+let tartalom="";
+
+
+for( let f=1; f<8; f++){
+
+tartalom += "<tr  style='border:2px solid black; ' >";
+
+for(let j=1; j<9; j++){
+
+
+if((f+j) %2 ==0){
+    tartalom += "<td style='background-color:black;padding:10px '></td>"}
+else{tartalom += "<td   style='padding:10px' >  </td>"}
+
+}
+
+tartalom += "</tr>"
+
+}
+
+tablejs2.innerHTML=tartalom
+
+
+
+
+
+
+
     </script>
 
 
