@@ -12,6 +12,17 @@
         body {
             box-sizing: border-box;
         }
+
+
+        .buttonok {
+            padding: 10px;
+            font-size: 40px;
+            width: 60px;
+        }
+
+        .szamologep>div:first-child {
+            font-size: 40px
+        }
     </style>
 </head>
 
@@ -195,8 +206,24 @@
     </table>
 
 
-<table class="tablejs2" style="margin:0 auto; border:2px solid black; border-collapse:collapse"></table>
+    <table class="tablejs2" style="margin:0 auto; border:2px solid black; border-collapse:collapse"></table>
 
+
+    <hr>
+
+
+    <div class="szamologep" style="border:2px solid black; max-width:400px; margin: 0 auto">
+        <div style="margin-top: 20px; text-align:center">SZÁMOLÓGÉP</div>
+
+        <input type="text" class="kijelzo" style="border:2px solid black; margin: 30px auto; width:300px; display:block; font-size:30px; color:red; font-weight:bold; height:80px ">
+        <div class="gombtarto" style="border:2px solid black; margin: 20px;   padding:40px"> </div>
+    </div>
+
+
+
+
+
+    <hr>
 
     <script>
         // let tablazat = ""
@@ -210,35 +237,73 @@
 
 
 
-let tablejs2= document.querySelector(".tablejs2");
+        let tablejs2 = document.querySelector(".tablejs2");
 
-let tartalom="";
+        let tartalom = "";
 
-for( let f=1; f<8; f++){
+        for (let f = 1; f < 8; f++) {
 
-tartalom += "<tr  style='border:2px solid black; ' >";
+            tartalom += "<tr  style='border:2px solid black; ' >";
 
-for(let j=1; j<9; j++){
-
-
-if((f+j) %2 ==0){
-    tartalom += "<td style='background-color:black;padding:10px '></td>"}
-else{tartalom += "<td   style='padding:10px' >  </td>"}
-
-}
-
-tartalom += "</tr>"
-
-}
-
-tablejs2.innerHTML=tartalom
+            for (let j = 1; j < 9; j++) {
 
 
+                if ((f + j) % 2 == 0) {
+                    tartalom += "<td style='background-color:black;padding:10px '></td>"
+                } else {
+                    tartalom += "<td   style='padding:10px' >  </td>"
+                }
 
+            }
 
+            tartalom += "</tr>"
+
+        }
+
+        tablejs2.innerHTML = tartalom
 
 
 
+
+
+        let kijelzo = document.querySelector(".kijelzo")
+        let gombtarto = document.querySelector(".gombtarto")
+        let gombok = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "=", "+", "-", "*", "/", "C", "%"]
+
+        for (i = 0; i < gombok.length; i++) {
+            gombtarto.innerHTML += "<button class='buttonok'>" + gombok[i] + "</button> "
+        }
+
+        let gombertekkel = document.querySelectorAll("button")
+
+        gombertekkel.forEach(function(egygomb) {
+            egygomb.addEventListener("click", function() {
+
+                if (egygomb.innerHTML == "C") {
+                    kijelzo.value = "";
+                    kijelzo.style.fontSize = "30px"
+                } else if (egygomb.innerHTML == "=") {
+                    if (kijelzo.value != "") {
+
+                        try {
+                            let eredmeny = eval(kijelzo.value);
+                            kijelzo.value = eredmeny;
+                            kijelzo.style.color = "green";
+                            kijelzo.style.fontSize = "60px"
+                        } catch {
+                            alert("Az Ön álatl begépelt:  " + kijelzo.value + " érték hibás.  \n Próbálkozzon ismét helyes értékek megadásval!");
+                            kijelzo.value = "";
+                            alert
+                        }
+                    }
+                } else {
+                    kijelzo.value += egygomb.innerHTML;
+                    kijelzo.style.color = "red";
+                    kijelzo.style.fontSize = "30px"
+                }
+
+            })
+        })
     </script>
 
 
