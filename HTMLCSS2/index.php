@@ -23,6 +23,9 @@
         .szamologep>div:first-child {
             font-size: 40px
         }
+
+
+        .button0, .button1, .button2, .button3, .button4, .button5{display: block ;margin: auto; padding: 20px; font-size: 60px;}
     </style>
 </head>
 
@@ -222,6 +225,32 @@
 
 
 
+<hr>
+
+
+<button class="button0">Button0</button>
+<hr>
+<button class="button1">Button1</button>
+<hr>
+<button class="button2">Button2</button>
+<hr>
+<button class="button3">Button3</button>
+<hr>
+<button class="button4">Button4</button>
+<hr>
+<button class="button5">Button5</button>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <hr>
 
@@ -274,7 +303,7 @@
             gombtarto.innerHTML += "<button class='buttonok'>" + gombok[i] + "</button> "
         }
 
-        let gombertekkel = document.querySelectorAll("button")
+        let gombertekkel = document.querySelectorAll(".buttonok")
 
         gombertekkel.forEach(function(egygomb) {
             egygomb.addEventListener("click", function() {
@@ -304,6 +333,96 @@
 
             })
         })
+
+
+
+
+
+
+
+
+let button0=document.querySelector(".button0");
+let button1=document.querySelector(".button1");
+let button2=document.querySelector(".button2");
+let button3=document.querySelector(".button3");
+let button4=document.querySelector(".button4");
+let button5=document.querySelector(".button5");
+
+
+
+//adott elemre specifikálva az eseményfigyelőt, de beszinezve maradd a gomb miután az egeret fölé húztam
+
+button0.addEventListener("mouseenter", function(){button0.style.backgroundColor="red"})
+
+
+// univerzálissá téve az eseményfigyelőt- önálló function- de beszinezve maradd a gomb miután az egeret fölé húztam
+
+function egerrahuzas1(elem,szin){elem.addEventListener("mouseenter", function(){elem.style.backgroundColor=szin})}
+
+egerrahuzas1(button1, "red")
+
+
+// ha lenyomom a kuror a gomb fölé megy, akkor adott színű lesz a gomb, ha lemegy róla, akkor az eredetis szín jelenik meg
+
+function egerrahuzas2(elem,szin1, szin2){elem.addEventListener("mouseenter", function(){elem.style.backgroundColor=szin1})
+
+elem.addEventListener("mouseleave", function(){elem.style.backgroundColor=szin2})}
+
+egerrahuzas2(button2, "red", "")
+
+
+// egérgomb lenyomáss pillanatában változik a gomb színe, majd visszaál az eredeti színre
+
+function egerrahuzaesclick(elem,szin1, szin2){elem.addEventListener("mousedown",function(){elem.style.backgroundColor=szin1}) ; elem.addEventListener("mouseup",function(){elem.style.backgroundColor=szin2})                       }
+
+
+egerrahuzaesclick(button3,"yellow","")
+
+
+// kattintásra változik a gomb színe
+
+function kattintasravaltozik(elem,szín0,szín1,szín2){ let valtozik=0;
+
+elem.addEventListener("click", function(){ if(valtozik==0){
+
+elem.style.backgroundColor=szín0; valtozik=1}
+
+else if(valtozik==1){elem.style.backgroundColor=szín1; valtozik=2}
+
+else{elem.style.backgroundColor=szín2; valtozik=0}
+
+}  ) }
+
+kattintasravaltozik(button4, "","grey","purple")
+
+
+
+
+// az egér ráhezelyzéseko 3 színt sorban felváltva változtat
+
+
+function fole(elem, szin1,szin2,szin3,szin4){let valt=0;   elem.addEventListener("mouseenter", function(){
+
+ if(valt==0){elem.style.backgroundColor=szin1; valt=1}
+else if(valt==1){elem.style.backgroundColor=szin2; valt=2}
+else if(valt==2){elem.style.backgroundColor=szin3; valt=3}
+
+else{elem.style.backgroundColor=szin4; valt=0}})}
+
+
+fole(button5, "","yellow","blue","red")
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 
