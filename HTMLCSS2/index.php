@@ -240,21 +240,65 @@
 <hr>
 <button class="button5">Button5</button>
 
+<hr>
 
 
+<div style="margin: 0 auto; text-align:center">
 
+<label for="szoveg" style=" font-size: 40px">Amit az input mezőbe írok, az az alábbi div be kerül kíírásra</label>
+<input type="text"  id="szoveg" class="input" style="padding: 30px; font-size:30px"  placeholder="tetszőleges szöveg" >
+<button class="bekuldes"> Küldés</button>
+<button class="delete1"> összegyűjtött szövegek törlése</button>
+<hr>
+<button class="delete2"> Páros számű összegyűjtött szöveg törlése</button>
 
+<hr>
+<div class="szoveggyujto" style="padding: 20px; border:2px solid red; max-width: 400px; margin: 0 auto;"  ><ol id=ol style="text-decoration:underline;"></ol></div>
 
-
-
-
-
-
-
-
+</div>
     <hr>
 
     <script>
+
+
+
+
+let elem= document.querySelector(".bekuldes");
+let input= document.querySelector(".input");
+let szoveggyujto= document.querySelector(".szoveggyujto");
+let delete1= document.querySelector(".delete1");
+let ol=document.querySelector("#ol");
+let li1= document.querySelector(".li1");
+let delete2= document.querySelector(".delete2");
+
+if(localStorage.getItem("mentés")!= null  ){   ol.innerHTML=localStorage.getItem("mentés");}
+
+
+function alertezés(elem){elem.addEventListener("click", function(){alert(input.value)  ;szovegosszgyujto(ol);
+ ; localStorage.setItem("mentés", ol.innerHTML); input.value="";
+
+})   }
+
+function szovegosszgyujto(elem2){elem2.innerHTML +=  "<li class='li1'>"+   input.value+"</li>"};
+
+
+function szovegtorles(elem3){elem3.addEventListener("click", function(){ol.innerHTML =""   })}
+{}
+function parostorles(elem4){elem4.addEventListener("click", function(){ let parosak=document.querySelectorAll("#ol li:nth-child(even)"); parosak.forEach( function(elem){elem.remove()}); localStorage.setItem("mentés", ol.innerHTML) })}
+
+parostorles(delete2);
+
+
+
+
+
+szovegtorles(delete1);
+
+alertezés(elem)
+;
+
+
+
         // let tablazat = ""
 
         // for (i = 1; i < 9; i++) {
