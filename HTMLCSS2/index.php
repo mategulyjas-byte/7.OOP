@@ -258,7 +258,75 @@
 </div>
     <hr>
 
+<div style="margin: 0 auto; text-align:center;">
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+<button class="gomb"> document.querySelectorAll foreach </button>
+<br>
+<button class="gomb"> document.querySelectorAll foreach</button>
+
+<br>
+<button class="gomb2"> document.querySelector</button>
+<br>
+<button class="gomb2"> document.querySelector</button>
+<br>
+
+<button class="gomb3"> document.getElementsByClassName  + Array.from() foreach</button>
+<br>
+<button class="gomb3"> document.getElementsByClassName + Array.from()  foreach</button>
+
+
+<br>
+
+<button class="gomb4"> <span> document.getElementsByTagName + Array.from()  foreach</span></button>
+<br>
+<button class="gomb4"> <span> document.getElementsByTagName + Array.from()  foreach</span></button>
+<br>
+
+<button id="gomb5"> document.getElementById</button>
+<br>
+
+<br>
+<br>
+
+</div>
     <script>
+
+
+let gomb= document.querySelectorAll(".gomb");
+let gomb2= document.querySelector(".gomb2");
+let gomb3= document.getElementsByClassName("gomb3");
+let gomb4= document.getElementsByTagName("span");
+
+let gomb5= document.getElementById("gomb5");
+
+
+gomb.forEach( function (egygomb){egygomb.addEventListener("click", function(){egygomb.style.backgroundColor="red"})});
+
+
+gomb2.addEventListener("click", function(){gomb2.style.backgroundColor="green"})
+
+//gomb3.addEventListener("click", function(){gomb3.style.backgroundColor="green"})
+
+Array.from(gomb3).forEach(function (egygomb3){egygomb3.addEventListener("click",function(){egygomb3.style.backgroundColor="purple"})});
+
+
+Array.from(gomb4).forEach(function(gomb4egy){gomb4egy.addEventListener("click", function(){gomb4egy.style.backgroundColor="green"})});
+
+
+
+
+gomb5.addEventListener("click",function(){gomb5.style.backgroundColor="yellow"});
+
+
+
+
+
+
+
+
 
 
 

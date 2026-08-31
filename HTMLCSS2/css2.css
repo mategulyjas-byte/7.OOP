@@ -8,3 +8,4 @@
 .tablejs tr:nth-child(even) > td:nth-child(odd){background-color: black; padding: 20px;}
 
 
+.gomb, .gomb2, .gomb3, #gomb5, span{ font-size: 40px;}
